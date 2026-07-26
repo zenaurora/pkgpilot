@@ -1,0 +1,137 @@
+[
+  {
+    "id": "rust-manual-byte-parsing",
+    "lang": "rust",
+    "name": "手动字节序解析",
+    "pattern": "(u16|u32|u64|u128|i16|i32|i64|f32|f64)::from_(le|be)_bytes",
+    "minHits": 3,
+    "suggest": "bytes",
+    "reason": "多处手动 from_le_bytes/from_be_bytes + 切片偏移。bytes crate 的 Buf trait 提供 get_u64_le()/get_u16() 等方法，读取后自动推进游标，写入侧有 put_u16_le()/put_slice()"
+  },
+  {
+    "id": "rust-manual-json-format",
+    "lang": "rust",
+    "name": "format! 手拼 JSON",
+    "pattern": "format!\\(\\s*\"\\{{?\\\\\"",
+    "minHits": 2,
+    "suggest": "serde_json",
+    "reason": "用 format! 拼 JSON 字符串容易漏转义。serde_json::json! 宏或 derive Serialize 更安全"
+  },
+  {
+    "id": "rust-thread-sleep",
+    "lang": "rust",
+    "name": "thread::sleep 轮询",
+    "pattern": "thread::sleep\\(",
+    "minHits": 3,
+    "suggest": "tokio",
+    "reason": "多处阻塞 sleep。若是异步项目应改用 tokio::time::{sleep, interval}；同步轮询场景可考虑 crossbeam channel 的超时接收"
+  },
+  {
+    "id": "rust-manual-hex",
+    "lang": "rust",
+    "name": "手动 hex 格式化",
+    "pattern": "\\{:02[xX]\\}",
+    "minHits": 2,
+    "suggest": "hex",
+    "reason": "手动 {:02x} 拼 hex 字符串。hex::encode/decode 一行搞定"
+  },
+  {
+    "id": "rust-static-mut",
+    "lang": "rust",
+    "name": "static mut 全局变量",
+    "pattern": "static\\s+mut\\s+",
+    "minHits": 1,
+    "suggest": "",
+    "reason": "static mut 是 UB 温床。用 std::sync::LazyLock / OnceLock（1.70+ 内置），或需要运行时初始化配合 Mutex/RwLock"
+  },
+  {
+    "id": "rust-manual-args",
+    "lang": "rust",
+    "name": "手动解析命令行参数",
+    "pattern": "env::args\\(\\)",
+    "minHits": 2,
+    "suggest": "clap",
+    "reason": "手动遍历 env::args() 解析参数。clap derive 模式声明 struct 即可获得解析、校验和 --help"
+  },
+  {
+    "id": "py-manual-progress",
+    "lang": "python",
+    "name": "手写进度打印",
+    "pattern": "end=[\"']\\\\r[\"']|\\\\r[\"']\\s*[,)]",
+    "minHits": 1,
+    "suggest": "tqdm",
+    "reason": "用 \\r 手刷进度行。tqdm 包一层迭代器即可：for x in tqdm(items)"
+  },
+  {
+    "id": "py-os-path",
+    "lang": "python",
+    "name": "os.path 风格路径操作",
+    "pattern": "os\\.path\\.(join|exists|dirname|basename|splitext|isfile|isdir)",
+    "minHits": 5,
+    "suggest": "",
+    "reason": "大量 os.path 调用。标准库 pathlib.Path 更面向对象：Path(a) / b、p.exists()、p.stem，无需额外依赖"
+  },
+  {
+    "id": "py-sys-argv",
+    "lang": "python",
+    "name": "手动解析 sys.argv",
+    "pattern": "sys\\.argv\\[",
+    "minHits": 3,
+    "suggest": "typer",
+    "reason": "手动索引 sys.argv。typer 用类型注解自动生成 CLI（或标准库 argparse）"
+  },
+  {
+    "id": "py-manual-retry",
+    "lang": "python",
+    "name": "手写重试循环",
+    "pattern": "for\\s+\\w+\\s+in\\s+range\\(\\d+\\):\\s*$",
+    "minHits": 3,
+    "suggest": "tenacity",
+    "reason": "如果这些 range 循环里是 try/except 重试逻辑，tenacity 的 @retry 装饰器可以声明式配置退避和最大次数"
+  },
+  {
+    "id": "js-json-deepclone",
+    "lang": "js",
+    "name": "JSON.parse(JSON.stringify()) 深拷贝",
+    "pattern": "JSON\\.parse\\(\\s*JSON\\.stringify\\(",
+    "minHits": 1,
+    "suggest": "",
+    "reason": "会丢失 Date/Map/undefined 且性能差。现代运行时用内置 structuredClone()；需要更多工具函数可用 es-toolkit 的 cloneDeep"
+  },
+  {
+    "id": "js-promise-settimeout",
+    "lang": "js",
+    "name": "手写 sleep Promise",
+    "pattern": "new Promise\\([^)]*setTimeout",
+    "minHits": 2,
+    "suggest": "",
+    "reason": "Node 可直接 import { setTimeout as sleep } from 'node:timers/promises'；浏览器侧封装一次放公共 utils 即可"
+  },
+  {
+    "id": "js-manual-date-format",
+    "lang": "js",
+    "name": "手动拼日期字符串",
+    "pattern": "getFullYear\\(\\)",
+    "minHits": 3,
+    "suggest": "dayjs",
+    "reason": "多处 getFullYear/getMonth 手拼日期。dayjs().format('YYYY-MM-DD') 更不易错（注意 getMonth 从 0 开始的坑）"
+  },
+  {
+    "id": "js-manual-debounce",
+    "lang": "js",
+    "name": "手写防抖/节流",
+    "pattern": "clearTimeout\\(",
+    "minHits": 3,
+    "suggest": "es-toolkit",
+    "reason": "多处 clearTimeout+setTimeout 疑似手写防抖。es-toolkit 提供 debounce/throttle，带 cancel/flush"
+  },
+  {
+    "id": "js-random-id",
+    "lang": "js",
+    "name": "Math.random 生成 ID",
+    "pattern": "Math\\.random\\(\\)\\.toString\\(36\\)",
+    "minHits": 1,
+    "suggest": "nanoid",
+    "reason": "Math.random 生成的 ID 碰撞概率高且不均匀。nanoid() 更安全更短"
+  }
+]

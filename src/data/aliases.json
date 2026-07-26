@@ -1,0 +1,325 @@
+[
+  { "keywords": ["加密", "crypto", "hash", "哈希", "sha", "签名"], "lang": "rust", "packages": [
+    { "name": "ring", "note": "常用密码学原语（AEAD/HMAC/签名）" },
+    { "name": "sha2", "note": "SHA-256/512" },
+    { "name": "blake3", "note": "极快的通用哈希" },
+    { "name": "argon2", "note": "密码哈希（存密码用这个）" },
+    { "name": "aes-gcm", "note": "对称加密 AEAD" }
+  ]},
+  { "keywords": ["tls", "ssl", "https", "证书"], "lang": "rust", "packages": [
+    { "name": "rustls", "note": "纯 Rust TLS，现代默认选择" },
+    { "name": "native-tls", "note": "走系统 TLS（win/mac）或 OpenSSL" }
+  ]},
+  { "keywords": ["密码", "password", "口令哈希", "bcrypt"], "lang": "rust", "packages": [
+    { "name": "argon2", "note": "推荐的密码哈希" },
+    { "name": "bcrypt", "note": "经典密码哈希" }
+  ]},
+  { "keywords": ["字节", "bytes", "buffer", "缓冲", "二进制", "binary", "协议解析"], "lang": "rust", "packages": [
+    { "name": "bytes", "note": "Buf/BufMut：get_u64/put_u16_le 自动推进游标，无需手动 advance" },
+    { "name": "byteorder", "note": "按端序读写整数" },
+    { "name": "bincode", "note": "二进制序列化" }
+  ]},
+  { "keywords": ["json", "序列化", "serialize", "反序列化"], "lang": "rust", "packages": [
+    { "name": "serde", "note": "序列化框架（加 derive feature）", "features": ["derive"] },
+    { "name": "serde_json", "note": "JSON 实现" }
+  ]},
+  { "keywords": ["jwt", "token", "鉴权", "auth"], "lang": "rust", "packages": [
+    { "name": "jsonwebtoken", "note": "JWT 签发与校验" }
+  ]},
+  { "keywords": ["http", "请求", "客户端", "request", "爬虫"], "lang": "rust", "packages": [
+    { "name": "reqwest", "note": "主流 HTTP 客户端", "features": ["json"] },
+    { "name": "ureq", "note": "轻量同步 HTTP" }
+  ]},
+  { "keywords": ["web", "框架", "后端", "服务器", "server", "api"], "lang": "rust", "packages": [
+    { "name": "axum", "note": "tokio 官方系 Web 框架" },
+    { "name": "actix-web", "note": "成熟高性能 Web 框架" }
+  ]},
+  { "keywords": ["异步", "async", "运行时", "runtime", "并发"], "lang": "rust", "packages": [
+    { "name": "tokio", "note": "事实标准异步运行时", "features": ["macros", "rt-multi-thread"] },
+    { "name": "futures", "note": "Stream/Future 组合子" }
+  ]},
+  { "keywords": ["orm", "数据库", "database", "sql", "postgres", "mysql", "sqlite"], "lang": "rust", "packages": [
+    { "name": "sqlx", "note": "异步 SQL，编译期校验，非 ORM" },
+    { "name": "sea-orm", "note": "异步 ORM" },
+    { "name": "diesel", "note": "同步 ORM，类型安全" }
+  ]},
+  { "keywords": ["命令行", "cli", "参数解析", "args"], "lang": "rust", "packages": [
+    { "name": "clap", "note": "命令行解析（derive 风格）", "features": ["derive"] }
+  ]},
+  { "keywords": ["错误处理", "error", "anyhow", "报错"], "lang": "rust", "packages": [
+    { "name": "anyhow", "note": "应用层随手 ? 传播" },
+    { "name": "color-eyre", "note": "anyhow 分支，报错展示更友好（面向终端用户）" },
+    { "name": "thiserror", "note": "库层自定义错误 derive" }
+  ]},
+  { "keywords": ["日志", "log", "tracing", "打印"], "lang": "rust", "packages": [
+    { "name": "tracing", "note": "结构化日志/分布式追踪门面" },
+    { "name": "tracing-subscriber", "note": "输出与 RUST_LOG 过滤", "features": ["env-filter"] }
+  ]},
+  { "keywords": ["随机", "random", "rand"], "lang": "rust", "packages": [
+    { "name": "rand", "note": "事实标准随机数" },
+    { "name": "fastrand", "note": "更简单快速（非密码学安全）" }
+  ]},
+  { "keywords": ["时间", "日期", "time", "date", "chrono"], "lang": "rust", "packages": [
+    { "name": "jiff", "note": "blessed.rs 首推，Temporal 风格 API + 自动时区库" },
+    { "name": "chrono", "note": "生态集成最广（sqlx/serde）" },
+    { "name": "time", "note": "API 克制，编译期日期字面量" }
+  ]},
+  { "keywords": ["正则", "regex", "匹配"], "lang": "rust", "packages": [
+    { "name": "regex", "note": "事实标准，极快但不支持回溯" },
+    { "name": "fancy-regex", "note": "需要回溯/环视时用" }
+  ]},
+  { "keywords": ["uuid", "唯一id"], "lang": "rust", "packages": [
+    { "name": "uuid", "note": "UUID 生成", "features": ["v4"] }
+  ]},
+  { "keywords": ["channel", "通道", "并发队列", "mpsc"], "lang": "rust", "packages": [
+    { "name": "crossbeam", "note": "高性能并发原语" },
+    { "name": "flume", "note": "简单快速的 channel" }
+  ]},
+  { "keywords": ["进度条", "progress"], "lang": "rust", "packages": [
+    { "name": "indicatif", "note": "终端进度条" }
+  ]},
+  { "keywords": ["websocket", "ws", "长连接"], "lang": "rust", "packages": [
+    { "name": "tokio-tungstenite", "note": "异步 WebSocket" }
+  ]},
+  { "keywords": ["迭代器", "itertools", "组合"], "lang": "rust", "packages": [
+    { "name": "itertools", "note": "迭代器增强（chunk/join/sorted…）" }
+  ]},
+  { "keywords": ["压缩", "compress", "zip", "gzip"], "lang": "rust", "packages": [
+    { "name": "flate2", "note": "gzip/deflate" },
+    { "name": "zstd", "note": "zstd 压缩" }
+  ]},
+  { "keywords": ["base64", "编码"], "lang": "rust", "packages": [
+    { "name": "base64", "note": "base64 编解码" },
+    { "name": "hex", "note": "hex 编解码" }
+  ]},
+  { "keywords": ["配置", "config", "环境变量", "env"], "lang": "rust", "packages": [
+    { "name": "dotenvy", "note": "读取 .env" },
+    { "name": "figment", "note": "多源配置合并" }
+  ]},
+  { "keywords": ["redis", "缓存"], "lang": "rust", "packages": [
+    { "name": "redis", "note": "Redis 客户端", "features": ["tokio-comp"] }
+  ]},
+  { "keywords": ["tui", "终端界面", "终端ui"], "lang": "rust", "packages": [
+    { "name": "ratatui", "note": "终端 UI 框架" },
+    { "name": "crossterm", "note": "跨平台终端控制" }
+  ]},
+  { "keywords": ["交互提示", "确认", "选择菜单", "prompt"], "lang": "rust", "packages": [
+    { "name": "dialoguer", "note": "确认/选择/输入提示" },
+    { "name": "inquire", "note": "更现代，支持模糊搜索" }
+  ]},
+  { "keywords": ["临时文件", "tempfile", "temp"], "lang": "rust", "packages": [
+    { "name": "tempfile", "note": "临时文件和临时目录" }
+  ]},
+  { "keywords": ["有序map", "indexmap", "小数组", "栈分配"], "lang": "rust", "packages": [
+    { "name": "indexmap", "note": "保留插入顺序的 HashMap" },
+    { "name": "smallvec", "note": "栈上小数组，超出回退到堆" }
+  ]},
+  { "keywords": ["目录遍历", "walkdir", "glob", "文件查找", "gitignore"], "lang": "rust", "packages": [
+    { "name": "walkdir", "note": "递归目录遍历" },
+    { "name": "ignore", "note": "遍历时遵守 .gitignore" },
+    { "name": "globset", "note": "高性能多 glob 匹配" }
+  ]},
+  { "keywords": ["文件监听", "watch", "热更新", "notify"], "lang": "rust", "packages": [
+    { "name": "notify", "note": "文件/目录变更监听" }
+  ]},
+  { "keywords": ["用户目录", "配置目录", "缓存目录", "home"], "lang": "rust", "packages": [
+    { "name": "dirs", "note": "各平台配置/缓存目录" },
+    { "name": "directories", "note": "按应用名计算路径" }
+  ]},
+  { "keywords": ["并行", "parallel", "rayon", "多核"], "lang": "rust", "packages": [
+    { "name": "rayon", "note": "iter 换 par_iter 即并行" }
+  ]},
+  { "keywords": ["并发map", "锁", "mutex", "dashmap"], "lang": "rust", "packages": [
+    { "name": "dashmap", "note": "并发 HashMap" },
+    { "name": "parking_lot", "note": "比 std 更快的 Mutex/RwLock" },
+    { "name": "arc-swap", "note": "多读少写的原子指针交换" }
+  ]},
+  { "keywords": ["grpc", "protobuf", "rpc"], "lang": "rust", "packages": [
+    { "name": "tonic", "note": "gRPC over HTTP/2，配 tokio" },
+    { "name": "prost", "note": "Protocol Buffers 实现" }
+  ]},
+  { "keywords": ["graphql"], "lang": "rust", "packages": [
+    { "name": "async-graphql", "note": "高性能 GraphQL 服务端，集成 axum/actix" }
+  ]},
+  { "keywords": ["大整数", "高精度", "bigint", "decimal", "金额"], "lang": "rust", "packages": [
+    { "name": "num-bigint", "note": "大整数（num 全家桶）" },
+    { "name": "rust_decimal", "note": "十进制小数，算钱用这个" }
+  ]},
+  { "keywords": ["线性代数", "矩阵", "科学计算", "ndarray"], "lang": "rust", "packages": [
+    { "name": "nalgebra", "note": "通用线性代数（1d/2d）" },
+    { "name": "ndarray", "note": "任意维数组" }
+  ]},
+  { "keywords": ["dataframe", "表格", "数据分析"], "lang": "rust", "packages": [
+    { "name": "polars", "note": "Rust 版 pandas，Arrow 内存模型" }
+  ]},
+  { "keywords": ["python绑定", "pyo3", "扩展python"], "lang": "rust", "packages": [
+    { "name": "pyo3", "note": "Rust↔Python 双向调用" }
+  ]},
+  { "keywords": ["c绑定", "ffi", "bindgen"], "lang": "rust", "packages": [
+    { "name": "bindgen", "note": "C 库生成 Rust 绑定" },
+    { "name": "cc", "note": "构建时编译链接 C 代码" }
+  ]},
+  { "keywords": ["gui", "桌面应用", "窗口", "desktop"], "lang": "rust", "packages": [
+    { "name": "egui", "note": "立即模式，开箱即用最简单" },
+    { "name": "iced", "note": "保留模式，API 优雅" },
+    { "name": "tauri", "note": "系统 WebView + Rust 后端，类 Electron" },
+    { "name": "slint", "note": "声明式 UI，桌面/嵌入式" }
+  ]},
+  { "keywords": ["游戏", "game", "引擎", "2d", "3d"], "lang": "rust", "packages": [
+    { "name": "bevy", "note": "ECS 游戏引擎，2D/3D 都行" },
+    { "name": "macroquad", "note": "简单易上手的 2D 库" },
+    { "name": "glam", "note": "游戏向数学库" }
+  ]},
+  { "keywords": ["sqlite", "嵌入式数据库", "本地数据库"], "lang": "rust", "packages": [
+    { "name": "rusqlite", "note": "同步 SQLite，能用高级特性" },
+    { "name": "sqlx", "note": "异步，多数据库通用", "features": ["runtime-tokio", "sqlite"] }
+  ]},
+  { "keywords": ["mongodb", "mongo"], "lang": "rust", "packages": [
+    { "name": "mongodb", "note": "官方 MongoDB 驱动" }
+  ]},
+  { "keywords": ["连接池", "pool"], "lang": "rust", "packages": [
+    { "name": "deadpool", "note": "简单的异步连接池" }
+  ]},
+  { "keywords": ["位标志", "bitflags", "flags"], "lang": "rust", "packages": [
+    { "name": "bitflags", "note": "强类型位标志" }
+  ]},
+
+  { "keywords": ["进度条", "progress", "tqdm", "循环进度"], "lang": "python", "packages": [
+    { "name": "tqdm", "note": "包一层迭代器就有进度条" },
+    { "name": "rich", "note": "rich.progress 更漂亮" }
+  ]},
+  { "keywords": ["http", "请求", "request", "客户端"], "lang": "python", "packages": [
+    { "name": "httpx", "note": "现代 HTTP，同步异步都支持" },
+    { "name": "requests", "note": "经典同步 HTTP" }
+  ]},
+  { "keywords": ["web", "后端", "框架", "api", "服务器"], "lang": "python", "packages": [
+    { "name": "fastapi", "note": "异步 Web 框架 + 自动文档" },
+    { "name": "flask", "note": "轻量经典" }
+  ]},
+  { "keywords": ["命令行", "cli", "参数"], "lang": "python", "packages": [
+    { "name": "typer", "note": "类型注解生成 CLI" },
+    { "name": "click", "note": "装饰器风格 CLI" }
+  ]},
+  { "keywords": ["数据处理", "dataframe", "表格", "csv"], "lang": "python", "packages": [
+    { "name": "pandas", "note": "事实标准 DataFrame" },
+    { "name": "polars", "note": "更快的 DataFrame" }
+  ]},
+  { "keywords": ["绘图", "画图", "plot", "可视化", "图表"], "lang": "python", "packages": [
+    { "name": "matplotlib", "note": "基础绘图" },
+    { "name": "seaborn", "note": "统计图表" },
+    { "name": "plotly", "note": "交互式图表" }
+  ]},
+  { "keywords": ["机器学习", "ml", "sklearn"], "lang": "python", "packages": [
+    { "name": "scikit-learn", "note": "经典机器学习" }
+  ]},
+  { "keywords": ["深度学习", "神经网络", "torch", "训练"], "lang": "python", "packages": [
+    { "name": "torch", "note": "PyTorch" },
+    { "name": "einops", "note": "可读的张量重排 rearrange/reduce" }
+  ]},
+  { "keywords": ["爬虫", "html解析", "抓取", "scraping"], "lang": "python", "packages": [
+    { "name": "beautifulsoup4", "note": "HTML 解析" },
+    { "name": "lxml", "note": "高性能解析后端" }
+  ]},
+  { "keywords": ["终端美化", "彩色输出", "表格打印"], "lang": "python", "packages": [
+    { "name": "rich", "note": "彩色/表格/Markdown 终端渲染" }
+  ]},
+  { "keywords": ["环境变量", "env", "配置"], "lang": "python", "packages": [
+    { "name": "python-dotenv", "note": "读取 .env" },
+    { "name": "pydantic-settings", "note": "类型化配置" }
+  ]},
+  { "keywords": ["数据校验", "validation", "schema"], "lang": "python", "packages": [
+    { "name": "pydantic", "note": "数据模型与校验" }
+  ]},
+  { "keywords": ["重试", "retry"], "lang": "python", "packages": [
+    { "name": "tenacity", "note": "装饰器式自动重试" }
+  ]},
+  { "keywords": ["加密", "crypto", "哈希", "hash"], "lang": "python", "packages": [
+    { "name": "cryptography", "note": "主流密码学库" },
+    { "name": "argon2-cffi", "note": "密码哈希" }
+  ]},
+  { "keywords": ["jwt", "token", "鉴权"], "lang": "python", "packages": [
+    { "name": "pyjwt", "note": "JWT 编解码" }
+  ]},
+  { "keywords": ["图像", "image", "图片处理"], "lang": "python", "packages": [
+    { "name": "pillow", "note": "图像处理" },
+    { "name": "opencv-python", "note": "计算机视觉" }
+  ]},
+  { "keywords": ["测试", "test", "单元测试"], "lang": "python", "packages": [
+    { "name": "pytest", "note": "测试框架" }
+  ]},
+  { "keywords": ["日期", "时间", "date", "time"], "lang": "python", "packages": [
+    { "name": "pendulum", "note": "更好用的 datetime" }
+  ]},
+
+  { "keywords": ["动画", "animation", "motion", "过渡"], "lang": "js", "packages": [
+    { "name": "motion", "note": "声明式动画（原 framer-motion，支持 vanilla/React）" },
+    { "name": "gsap", "note": "时间轴/复杂序列动画" },
+    { "name": "lottie-web", "note": "播放 AE 导出动画" }
+  ]},
+  { "keywords": ["日期", "时间", "date", "time"], "lang": "js", "packages": [
+    { "name": "dayjs", "note": "2KB 日期库" },
+    { "name": "date-fns", "note": "函数式日期工具" }
+  ]},
+  { "keywords": ["http", "请求", "request", "fetch"], "lang": "js", "packages": [
+    { "name": "ky", "note": "fetch 封装，自动重试" },
+    { "name": "ofetch", "note": "同构 fetch 封装" },
+    { "name": "axios", "note": "经典 HTTP 客户端" }
+  ]},
+  { "keywords": ["工具函数", "lodash", "utils", "深拷贝", "防抖", "节流"], "lang": "js", "packages": [
+    { "name": "es-toolkit", "note": "现代 lodash 替代：debounce/cloneDeep/groupBy…" }
+  ]},
+  { "keywords": ["状态管理", "store", "state"], "lang": "js", "packages": [
+    { "name": "zustand", "note": "React 轻量状态" },
+    { "name": "pinia", "note": "Vue 官方状态" },
+    { "name": "jotai", "note": "React 原子化状态" }
+  ]},
+  { "keywords": ["校验", "validation", "schema", "表单校验"], "lang": "js", "packages": [
+    { "name": "zod", "note": "TS-first schema 校验" },
+    { "name": "valibot", "note": "更小的 zod 替代" }
+  ]},
+  { "keywords": ["jwt", "token", "鉴权", "加密"], "lang": "js", "packages": [
+    { "name": "jose", "note": "JWT/JWS/JWE，跨运行时" }
+  ]},
+  { "keywords": ["图表", "chart", "可视化"], "lang": "js", "packages": [
+    { "name": "echarts", "note": "功能全面的图表库" },
+    { "name": "chart.js", "note": "轻量图表" },
+    { "name": "d3", "note": "自定义可视化底层" }
+  ]},
+  { "keywords": ["websocket", "实时", "长连接"], "lang": "js", "packages": [
+    { "name": "socket.io", "note": "带房间/重连的实时通信" },
+    { "name": "ws", "note": "Node 原生 WebSocket 库" }
+  ]},
+  { "keywords": ["orm", "数据库", "database", "sql"], "lang": "js", "packages": [
+    { "name": "drizzle-orm", "note": "类型安全 SQL/ORM" },
+    { "name": "prisma", "note": "schema 驱动 ORM" }
+  ]},
+  { "keywords": ["web", "后端", "框架", "server", "api"], "lang": "js", "packages": [
+    { "name": "hono", "note": "轻量跨运行时 Web 框架" },
+    { "name": "fastify", "note": "高性能 Node 框架" },
+    { "name": "express", "note": "经典框架" }
+  ]},
+  { "keywords": ["测试", "test"], "lang": "js", "packages": [
+    { "name": "vitest", "note": "Vite 系测试框架" }
+  ]},
+  { "keywords": ["拖拽", "drag", "排序"], "lang": "js", "packages": [
+    { "name": "@dnd-kit/core", "note": "React 拖拽" },
+    { "name": "sortablejs", "note": "通用拖拽排序" }
+  ]},
+  { "keywords": ["虚拟列表", "virtual", "长列表"], "lang": "js", "packages": [
+    { "name": "virtua", "note": "轻量虚拟滚动" },
+    { "name": "@tanstack/react-virtual", "note": "React 虚拟列表" }
+  ]},
+  { "keywords": ["markdown", "md渲染"], "lang": "js", "packages": [
+    { "name": "marked", "note": "Markdown 转 HTML" },
+    { "name": "markdown-it", "note": "可扩展 Markdown 解析" }
+  ]},
+  { "keywords": ["唯一id", "uuid", "nanoid", "id生成"], "lang": "js", "packages": [
+    { "name": "nanoid", "note": "短小唯一 ID" },
+    { "name": "uuid", "note": "标准 UUID" }
+  ]},
+  { "keywords": ["命令行", "cli", "进度条", "terminal"], "lang": "js", "packages": [
+    { "name": "commander", "note": "CLI 参数解析" },
+    { "name": "ora", "note": "终端 spinner" },
+    { "name": "cli-progress", "note": "终端进度条" }
+  ]}
+]

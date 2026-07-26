@@ -1,0 +1,269 @@
+[
+  {
+    "name": "rust-web-backend",
+    "lang": "rust",
+    "tags": ["后端开发", "web", "backend"],
+    "description": "Rust Web 后端全家桶（框架/ORM 可换）",
+    "packages": [
+      { "name": "tokio", "features": ["macros", "rt-multi-thread"], "note": "异步运行时" },
+      { "name": "axum", "group": "Web 框架", "default": true, "note": "tokio 生态，tower 中间件" },
+      { "name": "actix-web", "group": "Web 框架", "note": "成熟、性能强，actor 风格" },
+      { "name": "serde", "features": ["derive"], "note": "序列化/反序列化" },
+      { "name": "serde_json", "note": "JSON 支持" },
+      { "name": "sqlx", "features": ["runtime-tokio", "tls-rustls", "postgres", "chrono", "uuid"], "group": "数据库", "default": true, "note": "异步 SQL，编译期校验" },
+      { "name": "sea-orm", "group": "数据库", "note": "异步 ORM，实体风格" },
+      { "name": "diesel", "group": "数据库", "note": "同步 ORM，类型最严" },
+      { "name": "jsonwebtoken", "note": "JWT 签发与校验" },
+      { "name": "tower-http", "features": ["cors", "trace"], "note": "CORS/日志等中间件" },
+      { "name": "tracing", "note": "结构化日志门面" },
+      { "name": "tracing-subscriber", "features": ["env-filter"], "note": "日志输出与过滤" },
+      { "name": "dotenvy", "note": "读取 .env" },
+      { "name": "anyhow", "note": "应用层错误处理" },
+      { "name": "thiserror", "note": "自定义错误类型" }
+    ]
+  },
+  {
+    "name": "rust-cli",
+    "lang": "rust",
+    "tags": ["命令行", "cli", "工具"],
+    "description": "命令行工具常用组合",
+    "packages": [
+      { "name": "clap", "features": ["derive"], "note": "命令行参数解析" },
+      { "name": "anyhow", "note": "错误处理" },
+      { "name": "indicatif", "note": "进度条" },
+      { "name": "dialoguer", "group": "交互式输入", "default": true, "note": "确认/选择/输入提示" },
+      { "name": "inquire", "group": "交互式输入", "note": "更现代的提示库，支持模糊搜索" },
+      { "name": "owo-colors", "note": "终端彩色输出" },
+      { "name": "serde", "features": ["derive"], "note": "配置序列化" }
+    ]
+  },
+  {
+    "name": "rust-async-net",
+    "lang": "rust",
+    "tags": ["网络", "异步", "net"],
+    "description": "异步网络/自定义协议开发",
+    "packages": [
+      { "name": "tokio", "features": ["full"], "note": "异步运行时" },
+      { "name": "bytes", "note": "字节缓冲，get_u64/put_u16_le 自动推进游标" },
+      { "name": "tokio-util", "features": ["codec"], "note": "帧编解码 Framed/Codec" },
+      { "name": "futures", "note": "Stream/Sink 组合子" },
+      { "name": "tracing", "note": "结构化日志" }
+    ]
+  },
+  {
+    "name": "rust-http-client",
+    "lang": "rust",
+    "tags": ["http", "客户端", "爬虫"],
+    "description": "HTTP 客户端与数据抓取",
+    "packages": [
+      { "name": "reqwest", "features": ["json"], "group": "HTTP 客户端", "default": true, "note": "异步，生态最广" },
+      { "name": "ureq", "group": "HTTP 客户端", "note": "同步、零异步依赖，适合简单场景" },
+      { "name": "tokio", "features": ["macros", "rt-multi-thread"], "note": "异步运行时（配 reqwest）" },
+      { "name": "serde", "features": ["derive"], "note": "响应反序列化" },
+      { "name": "anyhow", "note": "错误处理" }
+    ]
+  },
+  {
+    "name": "rust-error-log",
+    "lang": "rust",
+    "tags": ["基础", "日志", "错误处理"],
+    "description": "任何 Rust 项目的错误+日志底座",
+    "packages": [
+      { "name": "anyhow", "group": "应用层错误", "default": true, "note": "随手 ? 传播，最简单" },
+      { "name": "color-eyre", "group": "应用层错误", "note": "报错展示更友好，面向终端用户" },
+      { "name": "thiserror", "note": "库层错误类型" },
+      { "name": "tracing", "note": "日志门面" },
+      { "name": "tracing-subscriber", "features": ["env-filter"], "note": "RUST_LOG 过滤输出" }
+    ]
+  },
+  {
+    "name": "rust-tui",
+    "lang": "rust",
+    "tags": ["终端", "tui", "界面"],
+    "description": "终端 UI 应用（ratatui 生态）",
+    "packages": [
+      { "name": "ratatui", "note": "终端 UI 框架，布局/控件齐全" },
+      { "name": "crossterm", "note": "跨平台终端控制与事件" },
+      { "name": "color-eyre", "note": "panic 时优雅恢复终端" }
+    ]
+  },
+  {
+    "name": "rust-grpc",
+    "lang": "rust",
+    "tags": ["网络", "grpc", "rpc"],
+    "description": "gRPC 服务（tonic + prost）",
+    "packages": [
+      { "name": "tonic", "note": "gRPC over HTTP/2" },
+      { "name": "prost", "note": "Protocol Buffers（另需手动加 build 依赖 tonic-build）" },
+      { "name": "tokio", "features": ["macros", "rt-multi-thread"], "note": "异步运行时" }
+    ]
+  },
+  {
+    "name": "rust-concurrency",
+    "lang": "rust",
+    "tags": ["并发", "多线程", "performance"],
+    "description": "多线程/并发工具箱",
+    "packages": [
+      { "name": "rayon", "note": "数据并行：iter 换 par_iter" },
+      { "name": "dashmap", "note": "并发 HashMap" },
+      { "name": "parking_lot", "note": "更快的 Mutex/RwLock" },
+      { "name": "crossbeam-channel", "group": "Channel", "default": true, "note": "带 select，Go 风格" },
+      { "name": "flume", "group": "Channel", "note": "更小更简单，速度接近" }
+    ]
+  },
+  {
+    "name": "rust-gui",
+    "lang": "rust",
+    "tags": ["桌面", "gui", "应用"],
+    "description": "桌面 GUI 应用（框架三选一）",
+    "packages": [
+      { "name": "egui", "group": "GUI 框架", "default": true, "note": "立即模式，开箱即用最简单" },
+      { "name": "iced", "group": "GUI 框架", "note": "保留模式，API 优雅" },
+      { "name": "slint", "group": "GUI 框架", "note": "声明式 UI，嵌入式友好（GPL/商业双许可）" },
+      { "name": "rfd", "note": "原生文件对话框" },
+      { "name": "arboard", "note": "剪贴板读写" }
+    ]
+  },
+  {
+    "name": "py-datascience",
+    "lang": "python",
+    "tags": ["数据科学", "分析", "data"],
+    "description": "数据分析基础套件",
+    "packages": [
+      { "name": "numpy", "note": "数值计算" },
+      { "name": "pandas", "group": "表格处理", "default": true, "note": "事实标准，生态最全" },
+      { "name": "polars", "group": "表格处理", "note": "Rust 内核，大数据量更快" },
+      { "name": "matplotlib", "group": "绘图", "default": true, "note": "静态图表标准" },
+      { "name": "plotly", "group": "绘图", "note": "交互式图表" },
+      { "name": "scikit-learn", "note": "经典机器学习" },
+      { "name": "jupyter", "dev": true, "note": "交互式 notebook" }
+    ]
+  },
+  {
+    "name": "py-deeplearning",
+    "lang": "python",
+    "tags": ["深度学习", "训练", "ml"],
+    "description": "PyTorch 训练常用组合",
+    "packages": [
+      { "name": "torch", "note": "深度学习框架" },
+      { "name": "einops", "note": "可读的张量重排" },
+      { "name": "tqdm", "note": "训练进度条" },
+      { "name": "tensorboard", "note": "训练可视化" }
+    ]
+  },
+  {
+    "name": "py-cli",
+    "lang": "python",
+    "tags": ["命令行", "cli", "工具"],
+    "description": "Python 命令行工具",
+    "packages": [
+      { "name": "typer", "note": "类型注解驱动的 CLI 框架" },
+      { "name": "rich", "note": "终端美化/表格/进度" },
+      { "name": "tqdm", "note": "循环进度条" }
+    ]
+  },
+  {
+    "name": "py-web-fastapi",
+    "lang": "python",
+    "tags": ["后端开发", "web", "backend"],
+    "description": "FastAPI Web 后端",
+    "packages": [
+      { "name": "fastapi", "note": "Web 框架" },
+      { "name": "uvicorn", "note": "ASGI 服务器" },
+      { "name": "pydantic-settings", "note": "配置管理" },
+      { "name": "sqlalchemy", "note": "ORM" },
+      { "name": "alembic", "note": "数据库迁移" },
+      { "name": "pyjwt", "note": "JWT" },
+      { "name": "httpx", "dev": true, "note": "测试用 HTTP 客户端" }
+    ]
+  },
+  {
+    "name": "py-scraping",
+    "lang": "python",
+    "tags": ["爬虫", "抓取", "scraping"],
+    "description": "网页抓取与解析",
+    "packages": [
+      { "name": "httpx", "note": "同步/异步 HTTP 客户端" },
+      { "name": "beautifulsoup4", "note": "HTML 解析" },
+      { "name": "lxml", "note": "高性能解析后端" },
+      { "name": "tenacity", "note": "自动重试" }
+    ]
+  },
+  {
+    "name": "js-node-backend",
+    "lang": "js",
+    "tags": ["后端开发", "web", "backend"],
+    "description": "现代 Node/Bun 后端（框架/ORM 可换）",
+    "packages": [
+      { "name": "hono", "group": "Web 框架", "default": true, "note": "轻量、跨运行时" },
+      { "name": "express", "group": "Web 框架", "note": "生态最大，资料最多" },
+      { "name": "fastify", "group": "Web 框架", "note": "高性能，schema 驱动" },
+      { "name": "zod", "note": "请求校验" },
+      { "name": "drizzle-orm", "group": "ORM", "default": true, "note": "类型安全，贴近 SQL" },
+      { "name": "prisma", "group": "ORM", "note": "schema 优先，工具链完善" },
+      { "name": "jose", "note": "JWT/JWE" },
+      { "name": "pino", "note": "高性能日志" }
+    ]
+  },
+  {
+    "name": "js-frontend-react",
+    "lang": "js",
+    "tags": ["前端", "react"],
+    "description": "React 应用基础组合",
+    "packages": [
+      { "name": "react", "note": "UI 框架" },
+      { "name": "react-dom", "note": "DOM 渲染" },
+      { "name": "zustand", "note": "轻量状态管理" },
+      { "name": "@tanstack/react-query", "note": "服务端状态/请求缓存" }
+    ]
+  },
+  {
+    "name": "js-frontend-vue",
+    "lang": "js",
+    "tags": ["前端", "vue"],
+    "description": "Vue 应用基础组合",
+    "packages": [
+      { "name": "vue", "note": "UI 框架" },
+      { "name": "pinia", "note": "状态管理" },
+      { "name": "vue-router", "note": "路由" },
+      { "name": "@vueuse/core", "note": "组合式工具集" }
+    ]
+  },
+  {
+    "name": "js-anim",
+    "lang": "js",
+    "tags": ["前端", "动画", "animation"],
+    "description": "Web 动画",
+    "packages": [
+      { "name": "motion", "note": "声明式动画（原 framer-motion，支持 vanilla/React）" },
+      { "name": "gsap", "note": "时间轴/复杂序列动画" },
+      { "name": "lottie-web", "note": "AE 导出动画播放" }
+    ]
+  },
+  {
+    "name": "js-utils",
+    "lang": "js",
+    "tags": ["工具", "基础", "utils"],
+    "description": "通用工具库",
+    "packages": [
+      { "name": "es-toolkit", "note": "现代 lodash 替代，tree-shakable" },
+      { "name": "dayjs", "group": "日期处理", "default": true, "note": "moment 同构 API，2KB" },
+      { "name": "date-fns", "group": "日期处理", "note": "函数式，按需引入" },
+      { "name": "zod", "note": "数据校验" },
+      { "name": "ky", "note": "fetch 封装" },
+      { "name": "nanoid", "note": "短唯一 ID" }
+    ]
+  },
+  {
+    "name": "ts-tooling",
+    "lang": "js",
+    "tags": ["工具链", "typescript", "dev"],
+    "description": "TS 项目开发工具链（全部 dev 依赖）",
+    "packages": [
+      { "name": "typescript", "dev": true, "note": "类型检查" },
+      { "name": "tsx", "dev": true, "note": "直接运行 TS" },
+      { "name": "vitest", "dev": true, "note": "测试框架" },
+      { "name": "@biomejs/biome", "dev": true, "note": "lint + format 一体" }
+    ]
+  }
+]
