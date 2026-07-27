@@ -1,10 +1,11 @@
 import { Box, Text, useInput } from 'ink'
 import TextInput from 'ink-text-input'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { KeyHints } from '../components/KeyHints.tsx'
 import { SelectList, type ListItem } from '../components/SelectList.tsx'
 import { useAppCtx } from '../context.ts'
 import { searchAliases } from '../core/aliases.ts'
+import { loadLlmConfig, recommendPackages } from '../core/llm.ts'
 import { searchRegistry } from '../core/registry/index.ts'
 import type { PendingPackage, RegistryResult } from '../core/types.ts'
 import { sym, ui } from '../theme.ts'
@@ -33,8 +34,15 @@ export function SearchScreen({ active }: Props) {
   const [typing, setTyping] = useState(true)
   const [aliasRows, setAliasRows] = useState<ResultRow[]>([])
   const [registryRows, setRegistryRows] = useState<ResultRow[]>([])
+  const [aiRows, setAiRows] = useState<ResultRow[]>([])
+  const [aiLoading, setAiLoading] = useState(false)
   const [searching, setSearching] = useState(false)
+  const [searched, setSearched] = useState(false)
   const [error, setError] = useState('')
+  // 同步闸门：同一批按键里连按 a 不会发两次请求（state 在 re-render 前读不到新值）
+  const aiBusy = useRef(false)
+  // 请求序号：新搜索/新请求会使飞行中的旧响应作废
+  const aiReqId = useRef(0)
 
   const lang = ctx.project.lang
 
@@ -44,6 +52,9 @@ export function SearchScreen({ active }: Props) {
   }, [active, typing]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const runSearch = async (q: string) => {
+    aiReqId.current++
+    setAiRows([])
+    setSearched(true)
     const matches = searchAliases(lang, q)
     setAliasRows(
       matches.flatMap((m) =>
@@ -73,6 +84,39 @@ export function SearchScreen({ active }: Props) {
     }
   }
 
+  const runAi = async () => {
+    if (aiBusy.current || !query.trim()) return
+    const cfg = loadLlmConfig()
+    if (!cfg.ok) {
+      setError(cfg.reason)
+      return
+    }
+    aiBusy.current = true
+    const id = ++aiReqId.current
+    setAiLoading(true)
+    setError('')
+    try {
+      const existing = ctx.project.dependencies.map((d) => d.name)
+      const recs = await recommendPackages(cfg.config, lang, query, existing)
+      if (id === aiReqId.current) {
+        setAiRows(
+          recs.map((r) => ({
+            // 非 Rust 的包管理器不支持 features，丢弃以免清单展示与实际命令不一致
+            pkg: { name: r.name, lang, features: lang === 'rust' ? r.features : undefined, dev: r.dev, note: r.note },
+            label: r.name + (r.dev ? ' (dev)' : ''),
+            hint: r.note,
+          })),
+        )
+        if (!recs.length) ctx.setStatus('AI 没有找到合适的包')
+      }
+    } catch (e: any) {
+      if (id === aiReqId.current) setError(`AI 推荐失败: ${e?.message ?? e}`)
+    } finally {
+      aiBusy.current = false
+      setAiLoading(false)
+    }
+  }
+
   useInput(
     (input, key) => {
       if (input === '/' || key.escape) {
@@ -85,7 +129,7 @@ export function SearchScreen({ active }: Props) {
   // Esc while typing returns to the result list (TextInput ignores escape)
   useInput(
     (_input, key) => {
-      if (key.escape && (aliasRows.length || registryRows.length)) {
+      if (key.escape && (rows.length || query.trim())) {
         setTyping(false)
       }
     },
@@ -95,6 +139,7 @@ export function SearchScreen({ active }: Props) {
   const rows: (ResultRow & { section?: string })[] = [
     ...aliasRows.map((r, i) => ({ ...r, section: i === 0 ? '本地推荐' : undefined })),
     ...registryRows.map((r, i) => ({ ...r, section: i === 0 ? '注册表' : undefined })),
+    ...aiRows.map((r, i) => ({ ...r, section: i === 0 ? 'AI 推荐' : undefined })),
   ]
 
   const items: ListItem[] = rows.map((r, i) => ({
@@ -118,6 +163,7 @@ export function SearchScreen({ active }: Props) {
   useInput(
     (input) => {
       if (input === 'f') addRow(highlight, true)
+      if (input === 'a') void runAi()
       if (input === 'D') {
         const row = rows[highlight]
         if (row) {
@@ -154,7 +200,11 @@ export function SearchScreen({ active }: Props) {
           <KeyHints
             hints={[
               ['↵', '搜索'],
-              ...(rows.length ? ([['esc', '回到结果']] as [string, string][]) : []),
+              ...(rows.length
+                ? ([['esc', '回到结果']] as [string, string][])
+                : query.trim()
+                  ? ([['esc', '去列表问 AI']] as [string, string][])
+                  : []),
             ]}
           />
         ) : (
@@ -163,18 +213,26 @@ export function SearchScreen({ active }: Props) {
               ['↵', '加入清单'],
               ['D', '作为 dev 依赖'],
               ...(lang === 'rust' ? ([['f', '选 features 后加入']] as [string, string][]) : []),
+              ...(aiLoading ? [] : ([['a', aiRows.length ? '重新问 AI' : '问 AI 推荐']] as [string, string][])),
               ['/', '重新输入'],
             ]}
           />
         )}
       </Box>
       {searching && <Text dimColor>正在搜索注册表{sym.more}</Text>}
+      {aiLoading && <Text color={ui.accent}>{sym.brand} AI 思考中{sym.more}</Text>}
       {error && <Text color={ui.danger}>{sym.fail} {error}</Text>}
       <Box marginTop={1} flexDirection="column">
         <SelectList
           focused={active && !typing}
           maxHeight={14}
-          emptyText={query ? '没找到结果 — 换个说法或试试英文关键词' : '输入关键词后按 ↵ 搜索'}
+          emptyText={
+            !query
+              ? '输入关键词后按 ↵ 搜索'
+              : searched
+                ? '没找到结果 — 换个说法、试试英文关键词，或按 a 问 AI'
+              : '还没搜索 — 按 / 回去按 ↵ 搜索，或直接按 a 问 AI'
+          }
           items={items}
           onHighlight={setHighlight}
           onEnter={(i) => addRow(i, false)}
