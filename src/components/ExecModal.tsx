@@ -7,10 +7,12 @@ import { KeyHints } from './KeyHints.tsx'
 
 interface Props {
   commands: Command[]
-  kind: 'add' | 'remove'
+  kind: 'add' | 'remove' | 'upgrade'
   onDone: (success: boolean) => void
   onCancel: () => void
 }
+
+const VERB: Record<Props['kind'], string> = { add: '安装', remove: '移除', upgrade: '升级' }
 
 type Phase = 'confirm' | 'running' | 'done'
 
@@ -45,11 +47,11 @@ export function ExecModal({ commands, kind, onDone, onCancel }: Props) {
   return (
     <Box flexDirection="column" borderStyle="round" borderColor={color} paddingX={1}>
       <Text bold color={color}>
-        {phase === 'confirm' && `即将${kind === 'add' ? '安装' : '移除'}，确认一下命令：`}
-        {phase === 'running' && `正在${kind === 'add' ? '安装' : '移除'}${sym.more}`}
+        {phase === 'confirm' && `即将${VERB[kind]}，确认一下命令：`}
+        {phase === 'running' && `正在${VERB[kind]}${sym.more}`}
         {phase === 'done' &&
           (exitCode === 0
-            ? `${sym.ok} ${kind === 'add' ? '安装' : '移除'}完成`
+            ? `${sym.ok} ${VERB[kind]}完成`
             : `${sym.fail} 失败了（exit ${exitCode}），看看下面的输出`)}
       </Text>
       {commands.map((c, i) => (

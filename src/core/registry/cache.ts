@@ -35,6 +35,23 @@ export function cacheSet(key: string, data: unknown): void {
   }
 }
 
+/** fetch plain text with cache; falls back to stale cache when the network fails */
+export async function cachedFetchText(url: string, headers?: Record<string, string>): Promise<string> {
+  const hit = cacheGet<string>(url)
+  if (hit !== undefined) return hit
+  try {
+    const res = await fetch(url, { headers: { 'User-Agent': 'pkgpilot/0.1 (TUI package helper)', ...headers } })
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const data = await res.text()
+    cacheSet(url, data)
+    return data
+  } catch (err) {
+    const stale = cacheGet<string>(url, true)
+    if (stale !== undefined) return stale
+    throw err
+  }
+}
+
 /** fetch JSON with cache; falls back to stale cache when the network fails */
 export async function cachedFetchJson<T>(url: string, headers?: Record<string, string>): Promise<T> {
   const hit = cacheGet<T>(url)

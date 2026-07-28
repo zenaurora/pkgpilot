@@ -29,6 +29,30 @@ export function buildRemoveCommands(project: ProjectInfo, names: string[]): Comm
   }
 }
 
+export interface UpgradeTarget {
+  name: string
+  /** 注册表最新版本号 */
+  latest: string
+  dev?: boolean
+  /** 重新 add 时必须带上原有 features，否则 cargo add 会把它们丢掉 */
+  features?: string[]
+}
+
+/**
+ * 升级 = 重新 add 到指定版本：cargo/js 用 name@ver，uv 用 name>=ver。
+ * 复用 add 的分组逻辑（dev / features 拆命令）。
+ */
+export function buildUpgradeCommands(project: ProjectInfo, targets: UpgradeTarget[]): Command[] {
+  if (!targets.length) return []
+  const pkgs: PendingPackage[] = targets.map((t) => ({
+    name: project.lang === 'python' ? `${t.name}>=${t.latest}` : `${t.name}@${t.latest}`,
+    lang: project.lang,
+    dev: t.dev,
+    features: t.features,
+  }))
+  return buildAddCommands(project, pkgs)
+}
+
 export function formatCommand(cmd: Command): string {
   return `${cmd.bin} ${cmd.args.join(' ')}`
 }

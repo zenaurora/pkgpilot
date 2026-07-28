@@ -21,6 +21,7 @@ export function BundlesScreen({ active }: Props) {
   const [pane, setPane] = useState<Pane>('left')
   const [tagIdx, setTagIdx] = useState(-1) // -1 = all tags
   const [highlight, setHighlight] = useState(0)
+  const [rightHighlight, setRightHighlight] = useState(0)
   const [checked, setChecked] = useState<Set<string>>(new Set())
   const [saving, setSaving] = useState(false)
   const [saveName, setSaveName] = useState('')
@@ -92,6 +93,9 @@ export function BundlesScreen({ active }: Props) {
           setPane('left')
         } else if (input === 'a' && current) {
           setChecked(defaultSelection(current))
+        } else if (input === 'v' && current) {
+          const p = displayPackages[rightHighlight]
+          if (p) ctx.openDoc({ name: p.name, lang: current.lang, dev: p.dev, features: p.features, note: p.note })
         } else if (input === 'c' && current) {
           addPackages(current, checked)
           setPane('left')
@@ -122,6 +126,7 @@ export function BundlesScreen({ active }: Props) {
             hints={[
               ['空格', '选择/换同组'],
               ['↵', '加入选中的'],
+              ['v', '看用法'],
               ['a', '重置为推荐'],
               ['esc/←', '返回'],
             ]}
@@ -197,6 +202,7 @@ export function BundlesScreen({ active }: Props) {
                 checked: checked.has(p.name),
                 section: p.section,
               }))}
+              onHighlight={setRightHighlight}
               onToggle={(i) => {
                 setChecked((prev) => toggleSelection(current, prev, displayPackages[i].name))
               }}

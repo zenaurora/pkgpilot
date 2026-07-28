@@ -164,6 +164,10 @@ export function SearchScreen({ active }: Props) {
     (input) => {
       if (input === 'f') addRow(highlight, true)
       if (input === 'a') void runAi()
+      if (input === 'v') {
+        const row = rows[highlight]
+        if (row) ctx.openDoc(row.pkg)
+      }
       if (input === 'D') {
         const row = rows[highlight]
         if (row) {
@@ -211,6 +215,7 @@ export function SearchScreen({ active }: Props) {
           <KeyHints
             hints={[
               ['↵', '加入清单'],
+              ...(rows.length ? ([['v', '看用法']] as [string, string][]) : []),
               ['D', '作为 dev 依赖'],
               ...(lang === 'rust' ? ([['f', '选 features 后加入']] as [string, string][]) : []),
               ...(aiLoading ? [] : ([['a', aiRows.length ? '重新问 AI' : '问 AI 推荐']] as [string, string][])),

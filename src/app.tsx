@@ -1,6 +1,7 @@
 import { Box, Text, useApp as useInkApp, useInput } from 'ink'
 import { useMemo, useState } from 'react'
 import { ExecModal } from './components/ExecModal.tsx'
+import { DocModal } from './components/DocModal.tsx'
 import { FeaturesModal } from './components/FeaturesModal.tsx'
 import { KeyHints } from './components/KeyHints.tsx'
 import { AppContext, type AppCtx } from './context.ts'
@@ -35,10 +36,11 @@ export function App({ initialProjects }: Props) {
   const [inputActive, setInputActive] = useState(false)
   const [status, setStatus] = useState('')
   const [featuresPkg, setFeaturesPkg] = useState<PendingPackage | null>(null)
-  const [exec, setExec] = useState<{ commands: Command[]; kind: 'add' | 'remove' } | null>(null)
+  const [docPkg, setDocPkg] = useState<PendingPackage | null>(null)
+  const [exec, setExec] = useState<{ commands: Command[]; kind: 'add' | 'remove' | 'upgrade' } | null>(null)
 
   const project = projects[projectIdx]
-  const modalOpen = featuresPkg !== null || exec !== null
+  const modalOpen = featuresPkg !== null || docPkg !== null || exec !== null
 
   const ctx: AppCtx = useMemo(
     () => ({
@@ -54,6 +56,7 @@ export function App({ initialProjects }: Props) {
       inputActive,
       setInputActive,
       openFeatures: (pkg) => setFeaturesPkg(pkg),
+      openDoc: (pkg) => setDocPkg(pkg),
       openExec: (commands, kind) => {
         if (commands.length) setExec({ commands, kind })
       },
@@ -151,6 +154,17 @@ export function App({ initialProjects }: Props) {
           onCancel={() => setFeaturesPkg(null)}
         />
       )}
+      {docPkg && (
+        <DocModal
+          pkg={docPkg}
+          onAdd={(pkg) => {
+            ctx.addToCart(pkg)
+            setStatus(`已加入清单: ${pkg.name}`)
+            setDocPkg(null)
+          }}
+          onCancel={() => setDocPkg(null)}
+        />
+      )}
       {exec && (
         <ExecModal
           commands={exec.commands}
@@ -160,7 +174,7 @@ export function App({ initialProjects }: Props) {
             if (success) {
               if (exec.kind === 'add') setCart((prev) => prev.filter((p) => p.lang !== project.lang))
               ctx.refreshProject()
-              setStatus(exec.kind === 'add' ? '安装完成 ✓' : '移除完成 ✓')
+              setStatus(exec.kind === 'add' ? '安装完成 ✓' : exec.kind === 'upgrade' ? '升级完成 ✓' : '移除完成 ✓')
             }
             setExec(null)
           }}

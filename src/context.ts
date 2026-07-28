@@ -13,7 +13,9 @@ export interface AppCtx {
   inputActive: boolean
   setInputActive: (v: boolean) => void
   openFeatures: (pkg: PendingPackage) => void
-  openExec: (commands: Command[], kind: 'add' | 'remove') => void
+  /** 打开包资料浮层（摘要 + README 快速上手） */
+  openDoc: (pkg: PendingPackage) => void
+  openExec: (commands: Command[], kind: 'add' | 'remove' | 'upgrade') => void
   status: string
   setStatus: (s: string) => void
 }

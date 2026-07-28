@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "bun run src/index.tsx",
     "build": "bun run scripts/build.ts",
+    "collect-docs": "bun run scripts/collect-docs.ts",
     "test": "bun test"
   },
   "engines": {

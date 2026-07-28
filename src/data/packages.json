@@ -1,0 +1,1688 @@
+[
+  {
+    "name": "@biomejs/biome",
+    "lang": "js",
+    "version": "2.5.5",
+    "summary": "Biome is a toolchain for the web: formatter, linter and more",
+    "docsUrl": "https://biomejs.dev",
+    "repoUrl": "https://github.com/biomejs/biome",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "@dnd-kit/core",
+    "lang": "js",
+    "version": "6.3.1",
+    "summary": "dnd kit – a lightweight React library for building performant and accessible drag and drop experiences",
+    "docsUrl": "https://github.com/clauderic/dnd-kit#readme",
+    "repoUrl": "https://github.com/clauderic/dnd-kit",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "@tanstack/react-query",
+    "lang": "js",
+    "version": "5.101.4",
+    "summary": "Hooks for managing, caching and syncing asynchronous and remote data in React",
+    "docsUrl": "https://tanstack.com/query",
+    "repoUrl": "https://github.com/TanStack/query",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "@tanstack/react-virtual",
+    "lang": "js",
+    "version": "3.14.8",
+    "summary": "Headless UI for virtualizing scrollable elements in React",
+    "docsUrl": "https://tanstack.com/virtual",
+    "repoUrl": "https://github.com/TanStack/virtual",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "@vueuse/core",
+    "lang": "js",
+    "version": "14.3.0",
+    "summary": "Collection of essential Vue Composition Utilities",
+    "docsUrl": "https://github.com/vueuse/vueuse#readme",
+    "repoUrl": "https://github.com/vueuse/vueuse",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "axios",
+    "lang": "js",
+    "version": "1.18.1",
+    "summary": "Promise based HTTP client for the browser and node.js",
+    "docsUrl": "https://axios-http.com",
+    "repoUrl": "https://github.com/axios/axios",
+    "quickstart": "import axios from 'axios';\n//const axios = require('axios'); // legacy way\n\ntry {\n  const response = await axios.get('/user?ID=12345');\n  console.log(response);\n} catch (error) {\n  console.error(error);\n}\n\n// Optionally the request above could also be done as\naxios\n  .get('/user', {\n    params: {\n      ID: 12345,\n    },\n    timeout: 5000, // 5 seconds. See \"Handling Timeouts\" below for matching error handling\n  })\n  .then(function (response) {\n    console.log(response);\n  })\n  .catch(function (error) {\n    console.log(error);\n  })\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "chart.js",
+    "lang": "js",
+    "version": "4.5.1",
+    "summary": "Simple HTML5 charts using the canvas element.",
+    "docsUrl": "https://www.chartjs.org",
+    "repoUrl": "https://github.com/chartjs/Chart.js",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "cli-progress",
+    "lang": "js",
+    "version": "3.12.0",
+    "summary": "easy to use progress-bar for command-line/terminal applications",
+    "docsUrl": "https://github.com/npkgz/cli-progress",
+    "repoUrl": "https://github.com/npkgz/cli-progress",
+    "quickstart": "const cliProgress = require('cli-progress');\n\n// note: you have to install this dependency manually since it's not required by cli-progress\nconst colors = require('ansi-colors');\n\n// create new progress bar\nconst b1 = new cliProgress.SingleBar({\n    format: 'CLI Progress |' + colors.cyan('{bar}') + '| {percentage}% || {value}/{total} Chunks || Speed: {speed}',\n    barCompleteChar: '\\u2588',\n    barIncompleteChar: '\\u2591',\n    hideCursor: true\n});\n\n// initialize the bar - defining payload token \"speed\" with the default value \"N/A\"\nb1.start(200, 0, {\n    speed: \"N/A\"\n});\n\n// update values\nb1.increment();\nb1.update(20);\n\n// stop the bar\nb1.stop();",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "commander",
+    "lang": "js",
+    "version": "15.0.0",
+    "summary": "the complete solution for node.js command-line programs",
+    "docsUrl": "https://github.com/tj/commander.js#readme",
+    "repoUrl": "https://github.com/tj/commander.js",
+    "quickstart": "import { program } from 'commander';\n\nprogram\n  .option('--first')\n  .option('-s, --separator <char>')\n  .argument('<string>');\n\nprogram.parse();\n\nconst options = program.opts();\nconst limit = options.first ? 1 : undefined;\nconsole.log(program.args[0].split(options.separator, limit));",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "d3",
+    "lang": "js",
+    "version": "7.9.0",
+    "summary": "Data-Driven Documents",
+    "docsUrl": "https://d3js.org",
+    "repoUrl": "https://github.com/d3/d3",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "date-fns",
+    "lang": "js",
+    "version": "4.4.0",
+    "summary": "Modern JavaScript date utility library",
+    "docsUrl": "https://www.npmjs.com/package/date-fns",
+    "repoUrl": "https://github.com/date-fns/date-fns",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "dayjs",
+    "lang": "js",
+    "version": "1.11.21",
+    "summary": "2KB immutable date time library alternative to Moment.js with the same modern API",
+    "docsUrl": "https://day.js.org",
+    "repoUrl": "https://github.com/iamkun/dayjs",
+    "quickstart": "dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:mm:ss');",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "drizzle-orm",
+    "lang": "js",
+    "version": "0.45.2",
+    "summary": "Drizzle ORM package for SQL databases",
+    "docsUrl": "https://orm.drizzle.team",
+    "repoUrl": "https://github.com/drizzle-team/drizzle-orm",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "echarts",
+    "lang": "js",
+    "version": "6.1.0",
+    "summary": "Apache ECharts is a powerful, interactive charting and data visualization library for browser",
+    "docsUrl": "https://echarts.apache.org",
+    "repoUrl": "https://github.com/apache/echarts",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "es-toolkit",
+    "lang": "js",
+    "version": "1.50.0",
+    "summary": "A state-of-the-art, high-performance JavaScript utility library with a small bundle size and strong type annotations.",
+    "docsUrl": "https://es-toolkit.dev",
+    "repoUrl": "https://github.com/toss/es-toolkit",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "express",
+    "lang": "js",
+    "version": "5.2.1",
+    "summary": "Fast, unopinionated, minimalist web framework",
+    "docsUrl": "https://expressjs.com/",
+    "repoUrl": "https://github.com/expressjs/express",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "fastify",
+    "lang": "js",
+    "version": "5.10.0",
+    "summary": "Fast and low overhead web framework, for Node.js",
+    "docsUrl": "https://fastify.dev/",
+    "repoUrl": "https://github.com/fastify/fastify",
+    "quickstart": "// Require the framework and instantiate it\n\n// ESM\nimport Fastify from 'fastify'\n\nconst fastify = Fastify({\n  logger: true\n})\n// CommonJs\nconst fastify = require('fastify')({\n  logger: true\n})\n\n// Declare a route\nfastify.get('/', (request, reply) => {\n  reply.send({ hello: 'world' })\n})\n\n// Run the server!\nfastify.listen({ port: 3000 }, (err, address) => {\n  if (err) throw err\n  // Server is now listening on ${address}\n})",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "gsap",
+    "lang": "js",
+    "version": "3.15.0",
+    "summary": "GSAP is a framework-agnostic JavaScript animation library that turns developers into animation superheroes. Build high-performance animations that work in **every** major browser. Animate CSS, SVG, canvas, React, Vue, WebGL, colors, strings, motion paths,",
+    "docsUrl": "https://gsap.com",
+    "repoUrl": "https://github.com/greensock/GSAP",
+    "quickstart": "// typical import\nimport gsap from \"gsap\";\n\n// get other plugins:\nimport ScrollTrigger from \"gsap/ScrollTrigger\";\nimport Flip from \"gsap/Flip\";\nimport Draggable from \"gsap/Draggable\";\n\n// or all tools are exported from the \"all\" file (excluding members-only plugins):\nimport { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from \"gsap/all\";\n\n// don't forget to register plugins\ngsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "hono",
+    "lang": "js",
+    "version": "4.12.32",
+    "summary": "Web framework built on Web Standards",
+    "docsUrl": "https://hono.dev",
+    "repoUrl": "https://github.com/honojs/hono",
+    "quickstart": "import { Hono } from 'hono'\nconst app = new Hono()\n\napp.get('/', (c) => c.text('Hono!'))\n\nexport default app",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "jose",
+    "lang": "js",
+    "version": "6.2.4",
+    "summary": "JWA, JWS, JWE, JWT, JWK, JWKS for Node.js, Browser, Cloudflare Workers, Deno, Bun, and other Web-interoperable runtimes",
+    "docsUrl": "https://github.com/panva/jose",
+    "repoUrl": "https://github.com/panva/jose",
+    "quickstart": "import * as jose from 'jose'",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "jotai",
+    "lang": "js",
+    "version": "2.20.2",
+    "summary": "👻 Primitive and flexible state management for React",
+    "docsUrl": "https://github.com/pmndrs/jotai",
+    "repoUrl": "https://github.com/pmndrs/jotai",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ky",
+    "lang": "js",
+    "version": "2.0.2",
+    "summary": "Tiny and elegant HTTP client based on the Fetch API",
+    "docsUrl": "https://github.com/sindresorhus/ky#readme",
+    "repoUrl": "https://github.com/sindresorhus/ky",
+    "quickstart": "import ky from 'ky';\n\nconst json = await ky.post('https://example.com', {json: {foo: true}}).json();\n\nconsole.log(json);\n//=> {data: '🦄'}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "lottie-web",
+    "lang": "js",
+    "version": "5.13.0",
+    "summary": "After Effects plugin for exporting animations to SVG + JavaScript or canvas + JavaScript",
+    "docsUrl": "https://github.com/airbnb/lottie-web#readme",
+    "repoUrl": "https://github.com/airbnb/lottie-web",
+    "quickstart": "lottie.loadAnimation({\n  container: element, // the dom element that will contain the animation\n  renderer: 'svg',\n  loop: true,\n  autoplay: true,\n  path: 'data.json' // the path to the animation json\n});",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "markdown-it",
+    "lang": "js",
+    "version": "14.3.0",
+    "summary": "Markdown-it - modern pluggable markdown parser.",
+    "docsUrl": "https://github.com/markdown-it/markdown-it#readme",
+    "repoUrl": "https://github.com/markdown-it/markdown-it",
+    "quickstart": "// node.js\n// can use `require('markdown-it')` for CJS\nimport markdownit from 'markdown-it'\nconst md = markdownit()\nconst result = md.render('# markdown-it rulezz!');\n\n// browser with UMD build, added to \"window\" on script load\n// Note, there is no dash in \"markdownit\".\nconst md = window.markdownit();\nconst result = md.render('# markdown-it rulezz!');",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "marked",
+    "lang": "js",
+    "version": "18.0.7",
+    "summary": "A markdown parser built for speed",
+    "docsUrl": "https://marked.js.org",
+    "repoUrl": "https://github.com/markedjs/marked",
+    "quickstart": "import { marked } from 'marked';\nconst html = marked.parse('# Marked in Node.js');\nconsole.log(html);",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "motion",
+    "lang": "js",
+    "version": "12.42.2",
+    "summary": "An animation library for JavaScript and React.",
+    "docsUrl": "https://github.com/motiondivision/motion#readme",
+    "repoUrl": "https://github.com/motiondivision/motion",
+    "quickstart": "import { motion } from \"motion/react\"\n\nfunction Component() {\n    return <motion.div animate={{ x: 100 }} />\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "nanoid",
+    "lang": "js",
+    "version": "6.0.0",
+    "summary": "A tiny (118 bytes), secure URL-friendly unique string ID generator",
+    "docsUrl": "https://github.com/ai/nanoid#readme",
+    "repoUrl": "https://github.com/ai/nanoid",
+    "quickstart": "import { nanoid } from 'nanoid'\nmodel.id = nanoid() //=> \"V1StGXR8_Z5jdHi6B-myT\"",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ofetch",
+    "lang": "js",
+    "version": "1.5.1",
+    "summary": "A better fetch API. Works on node, browser and workers.",
+    "docsUrl": "https://github.com/unjs/ofetch#readme",
+    "repoUrl": "https://github.com/unjs/ofetch",
+    "quickstart": "// ESM / Typescript\nimport { ofetch } from \"ofetch\";\n\n// CommonJS\nconst { ofetch } = require(\"ofetch\");",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ora",
+    "lang": "js",
+    "version": "9.4.1",
+    "summary": "Elegant terminal spinner",
+    "docsUrl": "https://github.com/sindresorhus/ora#readme",
+    "repoUrl": "https://github.com/sindresorhus/ora",
+    "quickstart": "import ora from 'ora';\n\nconst spinner = ora('Loading unicorns').start();\n\nsetTimeout(() => {\n\tspinner.color = 'yellow';\n\tspinner.text = 'Loading rainbows';\n}, 1000);",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pinia",
+    "lang": "js",
+    "version": "4.0.2",
+    "summary": "Intuitive, type safe and flexible Store for Vue",
+    "docsUrl": "https://pinia.vuejs.org",
+    "repoUrl": "https://github.com/vuejs/pinia",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pino",
+    "lang": "js",
+    "version": "10.3.1",
+    "summary": "super fast, all natural json logger",
+    "docsUrl": "https://getpino.io",
+    "repoUrl": "https://github.com/pinojs/pino",
+    "quickstart": "const logger = require('pino')()\n\nlogger.info('hello world')\n\nconst child = logger.child({ a: 'property' })\nchild.info('hello child!')",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "prisma",
+    "lang": "js",
+    "version": "7.9.1",
+    "summary": "Prisma is an open-source database toolkit. It includes a JavaScript/TypeScript ORM for Node.js, migrations and a modern GUI to view and edit the data in your database. You can use Prisma in new projects or add it to an existing one.",
+    "docsUrl": "https://www.prisma.io",
+    "repoUrl": "https://github.com/prisma/prisma",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "react",
+    "lang": "js",
+    "version": "19.2.8",
+    "summary": "React is a JavaScript library for building user interfaces.",
+    "docsUrl": "https://react.dev/",
+    "repoUrl": "https://github.com/react/react",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "react-dom",
+    "lang": "js",
+    "version": "19.2.8",
+    "summary": "React package for working with the DOM.",
+    "docsUrl": "https://react.dev/",
+    "repoUrl": "https://github.com/react/react",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "socket.io",
+    "lang": "js",
+    "version": "4.8.3",
+    "summary": "node.js realtime framework server",
+    "docsUrl": "https://github.com/socketio/socket.io/tree/main/packages/socket.io#readme",
+    "repoUrl": "https://github.com/socketio/socket.io",
+    "quickstart": "io.on('connection', socket => {\n  socket.emit('request', /* … */); // emit an event to the socket\n  io.emit('broadcast', /* … */); // emit an event to all connected sockets\n  socket.on('reply', () => { /* … */ }); // listen to the event\n});",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "sortablejs",
+    "lang": "js",
+    "version": "1.15.7",
+    "summary": "JavaScript library for reorderable drag-and-drop lists on modern browsers and touch devices. No jQuery required. Supports Meteor, AngularJS, React, Polymer, Vue, Knockout and any CSS library, e.g. Bootstrap.",
+    "docsUrl": "https://github.com/SortableJS/Sortable#readme",
+    "repoUrl": "https://github.com/SortableJS/Sortable",
+    "quickstart": "// Default SortableJS\nimport Sortable from 'sortablejs';\n\n// Core SortableJS (without default plugins)\nimport Sortable from 'sortablejs/modular/sortable.core.esm.js';\n\n// Complete SortableJS (with all plugins)\nimport Sortable from 'sortablejs/modular/sortable.complete.esm.js';",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tsx",
+    "lang": "js",
+    "version": "4.23.1",
+    "summary": "TypeScript Execute (tsx): Node.js enhanced with esbuild to run TypeScript & ESM files",
+    "docsUrl": "https://tsx.hirok.io",
+    "repoUrl": "https://github.com/privatenumber/tsx",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "typescript",
+    "lang": "js",
+    "version": "7.0.2",
+    "summary": "TypeScript is a language for application scale JavaScript development",
+    "docsUrl": "https://www.typescriptlang.org/",
+    "repoUrl": "https://github.com/microsoft/TypeScript",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "uuid",
+    "lang": "js",
+    "version": "14.0.1",
+    "summary": "RFC9562 UUIDs",
+    "docsUrl": "https://github.com/uuidjs/uuid#readme",
+    "repoUrl": "https://github.com/uuidjs/uuid",
+    "quickstart": "import { v4 as uuidv4 } from 'uuid';\n\nuuidv4(); // ⇨ 'b18794e8-5d0d-417c-b361-ba38e78411b4'",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "valibot",
+    "lang": "js",
+    "version": "1.4.2",
+    "summary": "The modular and type safe schema library for validating structural data",
+    "docsUrl": "https://valibot.dev",
+    "repoUrl": "https://github.com/open-circle/valibot",
+    "quickstart": "import * as v from 'valibot'; // 1.31 kB\n\n// Create login schema with email and password\nconst LoginSchema = v.object({\n  email: v.pipe(v.string(), v.email()),\n  password: v.pipe(v.string(), v.minLength(8)),\n});\n\n// Infer output TypeScript type of login schema as\n// { email: string; password: string }\ntype LoginData = v.InferOutput<typeof LoginSchema>;\n\n// Throws error for email and password\nconst output1 = v.parse(LoginSchema, { email: '', password: '' });\n\n// Returns data as { email: string; password: string }\nconst output2 = v.parse(LoginSchema, {\n  email: 'jane@example.com',\n  password: '12345678',\n});",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "virtua",
+    "lang": "js",
+    "version": "0.50.0",
+    "summary": "A zero-config, fast and small (~3kB) virtual list (and grid) component for React, Vue, Solid, Svelte and Angular.",
+    "docsUrl": "https://github.com/inokawa/virtua#readme",
+    "repoUrl": "https://github.com/inokawa/virtua",
+    "quickstart": "import { VList } from \"virtua\";\n\n// children\nexport const App = () => {\n  return (\n    <VList style={{ height: 800 }}>\n      {Array.from({ length: 1000 }).map((_, i) => (\n        <div\n          key={i}\n          style={{\n            height: Math.floor(Math.random() * 10) * 10 + 10,\n            borderBottom: \"solid 1px gray\",\n            background: \"white\",\n          }}\n        >\n          {i}\n        </div>\n      ))}\n    </VList>\n  );\n};\n\n// or render prop\nexport const App = () => {\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "vitest",
+    "lang": "js",
+    "version": "4.1.10",
+    "summary": "Next generation testing framework powered by Vite",
+    "docsUrl": "https://vitest.dev",
+    "repoUrl": "https://github.com/vitest-dev/vitest",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "vue",
+    "lang": "js",
+    "version": "3.5.40",
+    "summary": "The progressive JavaScript framework for building modern web UI.",
+    "docsUrl": "https://vuejs.org/",
+    "repoUrl": "https://github.com/vuejs/core",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "vue-router",
+    "lang": "js",
+    "version": "5.2.0",
+    "summary": "> To see what versions are currently supported, please refer to the [Security Policy](./packages/router/SECURITY.md).",
+    "docsUrl": "https://router.vuejs.org",
+    "repoUrl": "https://github.com/vuejs/router",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ws",
+    "lang": "js",
+    "version": "8.21.1",
+    "summary": "Simple to use, blazing fast and thoroughly tested websocket client and server for Node.js",
+    "docsUrl": "https://github.com/websockets/ws",
+    "repoUrl": "https://github.com/websockets/ws",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "zod",
+    "lang": "js",
+    "version": "4.4.3",
+    "summary": "TypeScript-first schema declaration and validation library with static type inference",
+    "docsUrl": "https://zod.dev",
+    "repoUrl": "https://github.com/colinhacks/zod",
+    "quickstart": "import * as z from \"zod\";\n\nconst Player = z.object({\n  username: z.string(),\n  xp: z.number()\n});\n\n// 校验：失败抛 ZodError\nPlayer.parse({ username: \"billie\", xp: 100 });\n\n// 不想 try/catch 就用 safeParse\nconst result = Player.safeParse({ username: 42, xp: \"100\" });\nif (!result.success) result.error; else result.data;\n\n// 从 schema 反推类型\ntype Player = z.infer<typeof Player>;",
+    "fetchedAt": "2026-07-27",
+    "curated": true
+  },
+  {
+    "name": "zustand",
+    "lang": "js",
+    "version": "5.0.14",
+    "summary": "🐻 Bear necessities for state management in React",
+    "docsUrl": "https://github.com/pmndrs/zustand",
+    "repoUrl": "https://github.com/pmndrs/zustand",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "alembic",
+    "lang": "python",
+    "version": "1.18.5",
+    "summary": "A database migration tool for SQLAlchemy.",
+    "docsUrl": "https://alembic.sqlalchemy.org/en/latest/",
+    "repoUrl": "https://github.com/sqlalchemy/alembic/",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "argon2-cffi",
+    "lang": "python",
+    "version": "25.1.0",
+    "summary": "Argon2 for Python",
+    "docsUrl": "https://argon2-cffi.readthedocs.io/",
+    "repoUrl": "https://github.com/hynek/argon2-cffi",
+    "quickstart": ">>> from argon2 import PasswordHasher\n>>> ph = PasswordHasher()\n>>> hash = ph.hash(\"correct horse battery staple\")\n>>> hash  # doctest: +SKIP\n'$argon2id$v=19$m=65536,t=3,p=4$MIIRqgvgQbgj220jfp0MPA$YfwJSVjtjSU0zzV/P3S9nnQ/USre2wvJMjfCIjrTQbg'\n>>> ph.verify(hash, \"correct horse battery staple\")\nTrue\n>>> ph.check_needs_rehash(hash)\nFalse\n>>> ph.verify(hash, \"Tr0ub4dor&3\")\nTraceback (most recent call last):\n  ...\nargon2.exceptions.VerifyMismatchError: The password does not match the supplied hash",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "beautifulsoup4",
+    "lang": "python",
+    "version": "4.15.0",
+    "summary": "Screen-scraping library",
+    "docsUrl": "https://pypi.org/project/beautifulsoup4/",
+    "quickstart": ">>> from bs4 import BeautifulSoup\n>>> soup = BeautifulSoup(\"<p>Some<b>bad<i>HTML\")\n>>> print(soup.prettify())\n<html>\n <body>\n  <p>\n   Some\n   <b>\n    bad\n    <i>\n     HTML\n    </i>\n   </b>\n  </p>\n </body>\n</html>\n>>> soup.find(string=\"bad\")\n'bad'\n>>> soup.i\n<i>HTML</i>\n#\n>>> soup = BeautifulSoup(\"<tag1>Some<tag2/>bad<tag3>XML\", \"xml\")\n#\n>>> print(soup.prettify())\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "click",
+    "lang": "python",
+    "version": "8.4.2",
+    "summary": "Composable command line interface toolkit",
+    "docsUrl": "https://click.palletsprojects.com/",
+    "repoUrl": "https://github.com/pallets/click/",
+    "quickstart": "import click\n\n@click.command()\n@click.option(\"--count\", default=1, help=\"Number of greetings.\")\n@click.option(\"--name\", prompt=\"Your name\", help=\"The person to greet.\")\ndef hello(count, name):\n    \"\"\"Simple program that greets NAME for a total of COUNT times.\"\"\"\n    for _ in range(count):\n        click.echo(f\"Hello, {name}!\")\n\nif __name__ == '__main__':\n    hello()",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "cryptography",
+    "lang": "python",
+    "version": "49.0.0",
+    "summary": "cryptography is a package which provides cryptographic recipes and primitives to Python developers.",
+    "docsUrl": "https://cryptography.io/",
+    "repoUrl": "https://github.com/pyca/cryptography/",
+    "quickstart": ">>> from cryptography.fernet import Fernet\n>>> # Put this somewhere safe!\n>>> key = Fernet.generate_key()\n>>> f = Fernet(key)\n>>> token = f.encrypt(b\"A really secret message. Not for prying eyes.\")\n>>> token\nb'...'\n>>> f.decrypt(token)\nb'A really secret message. Not for prying eyes.'",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "einops",
+    "lang": "python",
+    "version": "0.8.2",
+    "summary": "A new flavour of deep learning operations",
+    "docsUrl": "https://pypi.org/project/einops/",
+    "quickstart": "from einops import rearrange, reduce, repeat\n# rearrange elements according to the pattern\noutput_tensor = rearrange(input_tensor, 't b c -> b c t')\n# combine rearrangement and reduction\noutput_tensor = reduce(input_tensor, 'b c (h h2) (w w2) -> b h w c', 'mean', h2=2, w2=2)\n# copy along a new axis\noutput_tensor = repeat(input_tensor, 'h w -> h w c', c=3)",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "fastapi",
+    "lang": "python",
+    "version": "0.140.6",
+    "summary": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+    "docsUrl": "https://fastapi.tiangolo.com/",
+    "repoUrl": "https://github.com/fastapi/fastapi",
+    "quickstart": "from fastapi import FastAPI\nfrom pydantic import BaseModel\n\napp = FastAPI()\n\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    is_offer: bool | None = None\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: str | None = None):\n    return {\"item_id\": item_id, \"q\": q}\n\n\n@app.put(\"/items/{item_id}\")\ndef update_item(item_id: int, item: Item):\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "flask",
+    "lang": "python",
+    "version": "3.1.3",
+    "summary": "A simple framework for building complex web applications.",
+    "docsUrl": "https://flask.palletsprojects.com/",
+    "repoUrl": "https://github.com/pallets/flask/",
+    "quickstart": "# save this as app.py\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello():\n    return \"Hello, World!\"",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "httpx",
+    "lang": "python",
+    "version": "0.28.1",
+    "summary": "The next generation HTTP client.",
+    "docsUrl": "https://www.python-httpx.org",
+    "repoUrl": "https://github.com/encode/httpx",
+    "quickstart": ">>> import httpx\n>>> r = httpx.get('https://www.example.org/')\n>>> r\n<Response [200 OK]>\n>>> r.status_code\n200\n>>> r.headers['content-type']\n'text/html; charset=UTF-8'\n>>> r.text\n'<!doctype html>\\n<html>\\n<head>\\n<title>Example Domain</title>...'",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "jupyter",
+    "lang": "python",
+    "version": "1.1.1",
+    "summary": "Jupyter metapackage. Install all the Jupyter components in one go.",
+    "docsUrl": "https://jupyter.org",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "lxml",
+    "lang": "python",
+    "version": "6.1.1",
+    "summary": "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API.",
+    "docsUrl": "https://lxml.de/",
+    "repoUrl": "https://github.com/lxml/lxml",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "matplotlib",
+    "lang": "python",
+    "version": "3.11.1",
+    "summary": "Python plotting package",
+    "docsUrl": "https://matplotlib.org",
+    "repoUrl": "https://github.com/matplotlib/matplotlib",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "numpy",
+    "lang": "python",
+    "version": "2.5.1",
+    "summary": "Fundamental package for array computing in Python",
+    "docsUrl": "https://numpy.org/doc/",
+    "repoUrl": "https://github.com/numpy/numpy",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "opencv-python",
+    "lang": "python",
+    "version": "5.0.0.93",
+    "summary": "Wrapper package for OpenCV python bindings.",
+    "docsUrl": "https://github.com/opencv/opencv-python",
+    "quickstart": "export CMAKE_ARGS='-DCMAKE_VERBOSE_MAKEFILE=ON'\nexport VERBOSE=1\n\npython3 setup.py bdist_wheel --build-type=Debug",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pandas",
+    "lang": "python",
+    "version": "3.0.5",
+    "summary": "Powerful data structures for data analysis, time series, and statistics",
+    "docsUrl": "https://pandas.pydata.org/docs/",
+    "repoUrl": "https://github.com/pandas-dev/pandas",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pendulum",
+    "lang": "python",
+    "version": "3.2.0",
+    "summary": "Python datetimes made easy",
+    "docsUrl": "https://pendulum.eustace.io/docs",
+    "repoUrl": "https://github.com/sdispater/pendulum",
+    "quickstart": ">>> import pendulum\n\n>>> now_in_paris = pendulum.now('Europe/Paris')\n>>> now_in_paris\n'2016-07-04T00:49:58.502116+02:00'\n\n# Seamless timezone switching\n>>> now_in_paris.in_timezone('UTC')\n'2016-07-03T22:49:58.502116+00:00'\n\n>>> tomorrow = pendulum.now().add(days=1)\n>>> last_week = pendulum.now().subtract(weeks=1)\n\n>>> past = pendulum.now().subtract(minutes=2)\n>>> past.diff_for_humans()\n'2 minutes ago'\n\n>>> delta = past - last_week\n>>> delta.hours\n23\n>>> delta.in_words(locale='en')\n'6 days 23 hours 58 minutes'\n\n# Proper handling of datetime normalization\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pillow",
+    "lang": "python",
+    "version": "12.3.0",
+    "summary": "Python Imaging Library (fork)",
+    "docsUrl": "https://pillow.readthedocs.io",
+    "repoUrl": "https://github.com/python-pillow/Pillow",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "plotly",
+    "lang": "python",
+    "version": "6.9.0",
+    "summary": "An open-source interactive data visualization library for Python",
+    "docsUrl": "https://plotly.com/python/",
+    "repoUrl": "https://github.com/plotly/plotly.py",
+    "quickstart": "import plotly.express as px\nfig = px.bar(x=[\"a\", \"b\", \"c\"], y=[1, 3, 2])\nfig.show()",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "polars",
+    "lang": "python",
+    "version": "1.43.1",
+    "summary": "Blazingly fast DataFrame library",
+    "docsUrl": "https://docs.pola.rs/api/python/stable/reference/index.html",
+    "repoUrl": "https://github.com/pola-rs/polars",
+    "quickstart": "import polars as pl\n\ndf = (\n    pl.scan_parquet(\"orders.parquet\")\n    .filter(pl.col(\"status\") == \"shipped\")\n    .group_by(\"customer_id\")\n    .agg(\n        pl.col(\"amount\").sum().alias(\"total\"),\n        pl.len().alias(\"n_orders\"),\n    )\n    .sort(\"total\", descending=True)\n    .collect()\n)",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pydantic",
+    "lang": "python",
+    "version": "2.13.4",
+    "summary": "Data validation using Python type hints",
+    "docsUrl": "https://docs.pydantic.dev",
+    "repoUrl": "https://github.com/pydantic/pydantic",
+    "quickstart": "from datetime import datetime\nfrom typing import Optional\nfrom pydantic import BaseModel\n\nclass User(BaseModel):\n    id: int\n    name: str = 'John Doe'\n    signup_ts: Optional[datetime] = None\n    friends: list[int] = []\n\nexternal_data = {'id': '123', 'signup_ts': '2017-06-01 12:22', 'friends': [1, '2', b'3']}\nuser = User(**external_data)\nprint(user)\n#> User id=123 name='John Doe' signup_ts=datetime.datetime(2017, 6, 1, 12, 22) friends=[1, 2, 3]\nprint(user.id)\n#> 123",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pydantic-settings",
+    "lang": "python",
+    "version": "2.14.2",
+    "summary": "Settings management using Pydantic",
+    "docsUrl": "https://docs.pydantic.dev/dev-v2/concepts/pydantic_settings/",
+    "repoUrl": "https://github.com/pydantic/pydantic-settings",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pyjwt",
+    "lang": "python",
+    "version": "2.13.0",
+    "summary": "JSON Web Token implementation in Python",
+    "docsUrl": "https://pypi.org/project/pyjwt/",
+    "quickstart": ">>> import jwt\n>>> encoded = jwt.encode({\"some\": \"payload\"}, \"secret\", algorithm=\"HS256\")\n>>> print(encoded)\neyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzb21lIjoicGF5bG9hZCJ9.4twFt5NiznN84AWoo1d7KO1T_yoc0Z6XOpOVswacPZg\n>>> jwt.decode(encoded, \"secret\", algorithms=[\"HS256\"])\n{'some': 'payload'}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pytest",
+    "lang": "python",
+    "version": "9.1.1",
+    "summary": "pytest: simple powerful testing with Python",
+    "docsUrl": "https://pypi.org/project/pytest/",
+    "repoUrl": "https://github.com/pytest-dev/pytest",
+    "quickstart": "# content of test_sample.py\ndef inc(x):\n    return x + 1\n\n\ndef test_answer():\n    assert inc(3) == 5",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "python-dotenv",
+    "lang": "python",
+    "version": "1.2.2",
+    "summary": "Read key-value pairs from a .env file and set them as environment variables",
+    "docsUrl": "https://pypi.org/project/python-dotenv/",
+    "repoUrl": "https://github.com/theskumar/python-dotenv",
+    "quickstart": "from dotenv import load_dotenv\n\nload_dotenv()  # reads variables from a .env file and sets them in os.environ\n\n# Code of your application, which uses environment variables (e.g. from `os.environ` or\n# `os.getenv`) as if they came from the actual environment.",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "requests",
+    "lang": "python",
+    "version": "2.34.2",
+    "summary": "Python HTTP for Humans.",
+    "docsUrl": "https://requests.readthedocs.io",
+    "repoUrl": "https://github.com/psf/requests",
+    "quickstart": ">>> import requests\n>>> r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))\n>>> r.status_code\n200\n>>> r.headers['content-type']\n'application/json; charset=utf8'\n>>> r.encoding\n'utf-8'\n>>> r.text\n'{\"authenticated\": true, ...'\n>>> r.json()\n{'authenticated': True, ...}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "rich",
+    "lang": "python",
+    "version": "15.0.0",
+    "summary": "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal",
+    "docsUrl": "https://rich.readthedocs.io/en/latest/",
+    "quickstart": "from rich import print\n\nprint(\"Hello, [bold magenta]World[/bold magenta]!\", \":vampire:\", locals())",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "scikit-learn",
+    "lang": "python",
+    "version": "1.9.0",
+    "summary": "A set of python modules for machine learning and data mining",
+    "docsUrl": "https://pypi.org/project/scikit-learn/",
+    "repoUrl": "https://github.com/scikit-learn/scikit-learn",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "seaborn",
+    "lang": "python",
+    "version": "0.13.2",
+    "summary": "Statistical data visualization",
+    "docsUrl": "http://seaborn.pydata.org",
+    "repoUrl": "https://github.com/mwaskom/seaborn",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "sqlalchemy",
+    "lang": "python",
+    "version": "2.0.51",
+    "summary": "Database Abstraction Library",
+    "docsUrl": "https://docs.sqlalchemy.org",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tenacity",
+    "lang": "python",
+    "version": "9.1.4",
+    "summary": "Retry code until it succeeds",
+    "docsUrl": "https://github.com/jd/tenacity",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tensorboard",
+    "lang": "python",
+    "version": "2.21.0",
+    "summary": "TensorBoard lets you watch Tensors Flow",
+    "docsUrl": "https://github.com/tensorflow/tensorboard",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "torch",
+    "lang": "python",
+    "version": "2.13.0",
+    "summary": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+    "docsUrl": "https://pytorch.org/docs",
+    "repoUrl": "https://github.com/pytorch/pytorch",
+    "quickstart": "make latexpdf",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tqdm",
+    "lang": "python",
+    "version": "4.70.0",
+    "summary": "Fast, Extensible Progress Meter",
+    "docsUrl": "https://pypi.org/project/tqdm/",
+    "repoUrl": "https://github.com/tqdm/tqdm",
+    "quickstart": "from tqdm import tqdm\nfor i in tqdm(range(10000)):\n    ...",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "typer",
+    "lang": "python",
+    "version": "0.27.0",
+    "summary": "Typer, build great CLIs. Easy to code. Based on Python type hints.",
+    "docsUrl": "https://typer.tiangolo.com",
+    "repoUrl": "https://github.com/fastapi/typer",
+    "quickstart": "import typer\n\napp = typer.Typer()\n\n\n@app.command()\ndef hello(name: str):\n    print(f\"Hello {name}\")\n\n\n@app.command()\ndef goodbye(name: str, formal: bool = False):\n    if formal:\n        print(f\"Goodbye Ms. {name}. Have a good day.\")\n    else:\n        print(f\"Bye {name}!\")\n\n\nif __name__ == \"__main__\":\n    app()",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "uvicorn",
+    "lang": "python",
+    "version": "0.51.0",
+    "summary": "The lightning-fast ASGI server.",
+    "docsUrl": "https://pypi.org/project/uvicorn/",
+    "repoUrl": "https://github.com/Kludex/uvicorn",
+    "quickstart": "async def app(scope, receive, send):\n    assert scope['type'] == 'http'\n\n    await send({\n        'type': 'http.response.start',\n        'status': 200,\n        'headers': [\n            (b'content-type', b'text/plain'),\n        ],\n    })\n    await send({\n        'type': 'http.response.body',\n        'body': b'Hello, world!',\n    })",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "actix-web",
+    "lang": "rust",
+    "version": "4.14.0",
+    "summary": "Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust",
+    "docsUrl": "https://docs.rs/actix-web",
+    "repoUrl": "https://github.com/actix/actix-web",
+    "quickstart": "use actix_web::{get, web, App, HttpServer, Responder};\n\n#[get(\"/hello/{name}\")]\nasync fn greet(name: web::Path<String>) -> impl Responder {\n    format!(\"Hello {name}!\")\n}\n\n#[actix_web::main] // or #[tokio::main]\nasync fn main() -> std::io::Result<()> {\n    HttpServer::new(|| {\n        App::new().service(greet)\n    })\n    .bind((\"127.0.0.1\", 8080))?\n    .run()\n    .await\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "aes-gcm",
+    "lang": "rust",
+    "version": "0.11.0",
+    "summary": "Pure Rust implementation of the AES-GCM (Galois/Counter Mode)\nAuthenticated Encryption with Associated Data (AEAD) Cipher\nwith optional architecture-specific hardware acceleration",
+    "docsUrl": "https://docs.rs/aes-gcm",
+    "repoUrl": "https://github.com/RustCrypto/AEADs",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "anyhow",
+    "lang": "rust",
+    "version": "1.0.104",
+    "summary": "Flexible concrete Error type built on std::error::Error",
+    "docsUrl": "https://docs.rs/anyhow",
+    "repoUrl": "https://github.com/dtolnay/anyhow",
+    "quickstart": "use anyhow::Result;\n\nfn get_cluster_info() -> Result<ClusterMap> {\n    let config = std::fs::read_to_string(\"cluster.json\")?;\n    let map: ClusterMap = serde_json::from_str(&config)?;\n    Ok(map)\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "arboard",
+    "lang": "rust",
+    "version": "3.6.1",
+    "summary": "Image and text handling for the OS clipboard.",
+    "docsUrl": "https://docs.rs/arboard",
+    "repoUrl": "https://github.com/1Password/arboard",
+    "quickstart": "use arboard::Clipboard;\n\nfn main() {\n    let mut clipboard = Clipboard::new().unwrap();\n    println!(\"Clipboard text was: {}\", clipboard.get_text().unwrap());\n\n    let the_string = \"Hello, world!\";\n    clipboard.set_text(the_string).unwrap();\n    println!(\"But now the clipboard text should be: \\\"{}\\\"\", the_string);\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "arc-swap",
+    "lang": "rust",
+    "version": "1.9.2",
+    "summary": "Atomically swappable Arc",
+    "docsUrl": "https://docs.rs/arc-swap",
+    "repoUrl": "https://github.com/vorner/arc-swap",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "argon2",
+    "lang": "rust",
+    "version": "0.5.3",
+    "summary": "Pure Rust implementation of the Argon2 password hashing function with support\nfor the Argon2d, Argon2i, and Argon2id algorithmic variants",
+    "docsUrl": "https://docs.rs/argon2",
+    "repoUrl": "https://github.com/RustCrypto/password-hashes",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "async-graphql",
+    "lang": "rust",
+    "version": "7.2.1",
+    "summary": "A GraphQL server library implemented in Rust",
+    "docsUrl": "https://docs.rs/async-graphql/",
+    "repoUrl": "https://github.com/async-graphql/async-graphql",
+    "quickstart": "use std::error::Error;\n\nuse async_graphql::{http::GraphiQLSource, EmptyMutation, EmptySubscription, Object, Schema};\nuse async_graphql_poem::*;\nuse poem::{listener::TcpListener, web::Html, *};\n\nstruct Query;\n\n#[Object]\nimpl Query {\n    async fn howdy(&self) -> &'static str {\n        \"partner\"\n    }\n}\n\n#[handler]\nasync fn graphiql() -> impl IntoResponse {\n    Html(GraphiQLSource::build().finish())\n}\n\n#[tokio::main]\nasync fn main() -> Result<(), Box<dyn Error>> {\n    // create the schema\n    let schema = Schema::build(Query, EmptyMutation, EmptySubscription).finish();\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "axum",
+    "lang": "rust",
+    "version": "0.8.9",
+    "summary": "HTTP routing and request handling library that focuses on ergonomics and modularity",
+    "docsUrl": "https://docs.rs/axum",
+    "repoUrl": "https://github.com/tokio-rs/axum",
+    "quickstart": "use axum::{\n    routing::{get, post},\n    http::StatusCode,\n    Json, Router,\n};\nuse serde::{Deserialize, Serialize};\n\n#[tokio::main]\nasync fn main() {\n    // initialize tracing\n    tracing_subscriber::fmt::init();\n\n    // build our application with a route\n    let app = Router::new()\n        // `GET /` goes to `root`\n        .route(\"/\", get(root))\n        // `POST /users` goes to `create_user`\n        .route(\"/users\", post(create_user));\n\n    // run our app with hyper, listening globally on port 3000\n    let listener = tokio::net::TcpListener::bind(\"0.0.0.0:3000\").await.unwrap();\n    axum::serve(listener, app).await.unwrap();\n}\n\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "base64",
+    "lang": "rust",
+    "version": "0.23.0",
+    "summary": "encodes and decodes base64 as bytes or utf8",
+    "docsUrl": "https://docs.rs/base64",
+    "repoUrl": "https://github.com/marshallpierce/rust-base64",
+    "quickstart": "RUSTFLAGS=\"-C target-feature=+avx2\" cargo +nightly miri \\\n    test --target x86_64-unknown-linux-gnu miri\nRUSTFLAGS=\"-C target-feature=+neon\" cargo +nightly miri \\\n    test --target aarch64-unknown-linux-gnu miri",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "bcrypt",
+    "lang": "rust",
+    "version": "0.19.3",
+    "summary": "Easily hash and verify passwords using bcrypt",
+    "docsUrl": "https://docs.rs/bcrypt",
+    "repoUrl": "https://github.com/Keats/rust-bcrypt",
+    "quickstart": "extern crate bcrypt;\n\nuse bcrypt::{DEFAULT_COST, hash, verify};\n\nlet hashed = hash(\"hunter2\", DEFAULT_COST)?;\nlet valid = verify(\"hunter2\", &hashed)?;",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "bevy",
+    "lang": "rust",
+    "version": "0.19.0",
+    "summary": "A refreshingly simple data-driven game engine and app framework",
+    "docsUrl": "https://docs.rs/bevy",
+    "repoUrl": "https://github.com/bevyengine/bevy",
+    "quickstart": "use bevy::prelude::*;\n\nfn main() {\n    App::new()\n        .add_plugins(DefaultPlugins)\n        .run();\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "bincode",
+    "lang": "rust",
+    "version": "3.0.0",
+    "summary": "A binary serialization / deserialization strategy for transforming structs into bytes and vice versa!",
+    "docsUrl": "https://docs.rs/bincode",
+    "repoUrl": "https://github.com/bincode-org/bincode",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "bindgen",
+    "lang": "rust",
+    "version": "0.72.1",
+    "summary": "Automatically generates Rust FFI bindings to C and C++ libraries.",
+    "docsUrl": "https://docs.rs/bindgen",
+    "repoUrl": "https://github.com/rust-lang/rust-bindgen",
+    "quickstart": "/* automatically generated by rust-bindgen 0.99.9 */\n\n#[repr(C)]\npub struct Doggo {\n    pub many: ::std::os::raw::c_int,\n    pub wow: ::std::os::raw::c_char,\n}\n\nextern \"C\" {\n    pub fn eleven_out_of_ten_majestic_af(pupper: *mut Doggo);\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "bitflags",
+    "lang": "rust",
+    "version": "2.13.1",
+    "summary": "A macro to generate structures which behave like bitflags.",
+    "docsUrl": "https://docs.rs/bitflags",
+    "repoUrl": "https://github.com/bitflags/bitflags",
+    "quickstart": "use bitflags::bitflags;",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "blake3",
+    "lang": "rust",
+    "version": "1.8.5",
+    "summary": "the BLAKE3 hash function",
+    "docsUrl": "https://docs.rs/blake3",
+    "repoUrl": "https://github.com/BLAKE3-team/BLAKE3",
+    "quickstart": "// Hash an input all at once.\nlet hash1 = blake3::hash(b\"foobarbaz\");\n\n// Hash an input incrementally.\nlet mut hasher = blake3::Hasher::new();\nhasher.update(b\"foo\");\nhasher.update(b\"bar\");\nhasher.update(b\"baz\");\nlet hash2 = hasher.finalize();\nassert_eq!(hash1, hash2);\n\n// Extended output. OutputReader also implements Read and Seek.\nlet mut output = [0; 1000];\nlet mut output_reader = hasher.finalize_xof();\noutput_reader.fill(&mut output);\nassert_eq!(hash1, output[..32]);\n\n// Print a hash as hex.\nprintln!(\"{}\", hash1);",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "byteorder",
+    "lang": "rust",
+    "version": "1.5.0",
+    "summary": "Library for reading/writing numbers in big-endian and little-endian.",
+    "docsUrl": "https://docs.rs/byteorder",
+    "repoUrl": "https://github.com/BurntSushi/byteorder",
+    "quickstart": "use byteorder::{ReadBytesExt, WriteBytesExt, BigEndian, LittleEndian};",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "bytes",
+    "lang": "rust",
+    "version": "1.12.1",
+    "summary": "Types and traits for working with bytes",
+    "docsUrl": "https://docs.rs/bytes",
+    "repoUrl": "https://github.com/tokio-rs/bytes",
+    "quickstart": "use bytes::{Bytes, BytesMut, Buf, BufMut};",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "cc",
+    "lang": "rust",
+    "version": "1.4.0",
+    "summary": "A build-time dependency for Cargo build scripts to assist in invoking the native\nC compiler to compile native C code into a static archive to be linked into Rust\ncode.",
+    "docsUrl": "https://docs.rs/cc",
+    "repoUrl": "https://github.com/rust-lang/cc-rs",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "chrono",
+    "lang": "rust",
+    "version": "0.4.45",
+    "summary": "Date and time library for Rust",
+    "docsUrl": "https://docs.rs/chrono/",
+    "repoUrl": "https://github.com/chronotope/chrono",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "clap",
+    "lang": "rust",
+    "version": "4.6.4",
+    "summary": "A simple to use, efficient, and full-featured Command Line Argument Parser",
+    "docsUrl": "https://docs.rs/clap",
+    "repoUrl": "https://github.com/clap-rs/clap",
+    "quickstart": "// 需要 derive feature：cargo add clap --features derive\nuse clap::Parser;\n\n/// Simple program to greet a person\n#[derive(Parser, Debug)]\n#[command(version, about, long_about = None)]\nstruct Args {\n    /// Name of the person to greet\n    #[arg(short, long)]\n    name: String,\n\n    /// Number of times to greet\n    #[arg(short, long, default_value_t = 1)]\n    count: u8,\n}\n\nfn main() {\n    let args = Args::parse();\n    for _ in 0..args.count {\n        println!(\"Hello {}!\", args.name);\n    }\n}",
+    "fetchedAt": "2026-07-27",
+    "curated": true
+  },
+  {
+    "name": "color-eyre",
+    "lang": "rust",
+    "version": "0.6.5",
+    "summary": "An error report handler for panics and eyre::Reports for colorful, consistent, and well formatted error reports for all kinds of errors.",
+    "docsUrl": "https://docs.rs/color-eyre",
+    "repoUrl": "https://github.com/eyre-rs/eyre",
+    "quickstart": "use eyre::Result;\n\nfn get_cluster_info() -> Result<ClusterMap> {\n    let config = std::fs::read_to_string(\"cluster.json\")?;\n    let map: ClusterMap = serde_json::from_str(&config)?;\n    Ok(map)\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "crossbeam",
+    "lang": "rust",
+    "version": "0.8.4",
+    "summary": "Tools for concurrent programming",
+    "docsUrl": "https://docs.rs/crossbeam",
+    "repoUrl": "https://github.com/crossbeam-rs/crossbeam",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "crossbeam-channel",
+    "lang": "rust",
+    "version": "0.5.16",
+    "summary": "Multi-producer multi-consumer channels for message passing",
+    "docsUrl": "https://docs.rs/crossbeam-channel",
+    "repoUrl": "https://github.com/crossbeam-rs/crossbeam",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "crossterm",
+    "lang": "rust",
+    "version": "0.29.0",
+    "summary": "A crossplatform terminal library for manipulating terminals.",
+    "docsUrl": "https://docs.rs/crossterm/",
+    "repoUrl": "https://github.com/crossterm-rs/crossterm",
+    "quickstart": "use std::io::{stdout, Write};\n\nuse crossterm::{\n    execute,\n    style::{Color, Print, ResetColor, SetBackgroundColor, SetForegroundColor},\n    ExecutableCommand,\n    event,\n};\n\nfn main() -> std::io::Result<()> {\n    // using the macro\n    execute!(\n        stdout(),\n        SetForegroundColor(Color::Blue),\n        SetBackgroundColor(Color::Red),\n        Print(\"Styled text here.\"),\n        ResetColor\n    )?;\n\n    // or using functions\n    stdout()\n        .execute(SetForegroundColor(Color::Blue))?\n        .execute(SetBackgroundColor(Color::Red))?\n        .execute(Print(\"Styled text here.\"))?\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "dashmap",
+    "lang": "rust",
+    "version": "6.2.1",
+    "summary": "Blazing fast concurrent HashMap for Rust.",
+    "docsUrl": "https://docs.rs/dashmap",
+    "repoUrl": "https://github.com/xacrimon/dashmap",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "deadpool",
+    "lang": "rust",
+    "version": "0.13.0",
+    "summary": "Dead simple async pool",
+    "docsUrl": "https://docs.rs/deadpool",
+    "repoUrl": "https://github.com/deadpool-rs/deadpool",
+    "quickstart": "use deadpool::managed;\n\n#[derive(Debug)]\nenum Error { Fail }\n\nstruct Computer {}\n\nimpl Computer {\n    async fn get_answer(&self) -> i32 {\n        42\n    }\n}\n\nstruct Manager {}\n\nimpl managed::Manager for Manager {\n    type Type = Computer;\n    type Error = Error;\n\n    async fn create(&self) -> Result<Computer, Error> {\n        Ok(Computer {})\n    }\n\n    async fn recycle(&self, _: &mut Computer, _: &managed::Metrics) -> managed::RecycleResult<Error> {\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "dialoguer",
+    "lang": "rust",
+    "version": "0.12.0",
+    "summary": "A command line prompting library.",
+    "docsUrl": "https://docs.rs/dialoguer",
+    "repoUrl": "https://github.com/console-rs/dialoguer",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "diesel",
+    "lang": "rust",
+    "version": "2.3.11",
+    "summary": "A safe, extensible ORM and Query Builder for PostgreSQL, SQLite, and MySQL",
+    "docsUrl": "https://docs.rs/diesel/",
+    "repoUrl": "https://github.com/diesel-rs/diesel",
+    "quickstart": "users::table.load(&mut connection)",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "directories",
+    "lang": "rust",
+    "version": "6.0.0",
+    "summary": "A tiny mid-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows and macOS by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on Windows, and the Standard Directory guidelines on macOS.",
+    "docsUrl": "https://docs.rs/directories",
+    "repoUrl": "https://github.com/soc/directories-rs",
+    "quickstart": "extern crate directories;\nuse directories::{BaseDirs, UserDirs, ProjectDirs};\n\nif let Some(proj_dirs) = ProjectDirs::from(\"com\", \"Foo Corp\",  \"Bar App\") {\n    proj_dirs.config_dir();\n    // Lin: /home/alice/.config/barapp\n    // Win: C:\\Users\\Alice\\AppData\\Roaming\\Foo Corp\\Bar App\\config\n    // Mac: /Users/Alice/Library/Application Support/com.Foo-Corp.Bar-App\n}\n\nif let Some(base_dirs) = BaseDirs::new() {\n    base_dirs.executable_dir();\n    // Lin: Some(/home/alice/.local/bin)\n    // Win: None\n    // Mac: None\n}\n\nif let Some(user_dirs) = UserDirs::new() {\n    user_dirs.audio_dir();\n    // Lin: /home/alice/Music\n    // Win: C:\\Users\\Alice\\Music\n    // Mac: /Users/Alice/Music\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "dirs",
+    "lang": "rust",
+    "version": "6.0.0",
+    "summary": "A tiny low-level library that provides platform-specific standard locations of directories for config, cache and other data on Linux, Windows, macOS and Redox by leveraging the mechanisms defined by the XDG base/user directory specifications on Linux, the Known Folder API on Windows, and the Standard Directory guidelines on macOS.",
+    "docsUrl": "https://docs.rs/dirs",
+    "repoUrl": "https://github.com/soc/dirs-rs",
+    "quickstart": "extern crate dirs;\n\ndirs::home_dir();\n// Lin: Some(/home/alice)\n// Win: Some(C:\\Users\\Alice)\n// Mac: Some(/Users/Alice)\n\ndirs::audio_dir();\n// Lin: Some(/home/alice/Music)\n// Win: Some(C:\\Users\\Alice\\Music)\n// Mac: Some(/Users/Alice/Music)\n\ndirs::config_dir();\n// Lin: Some(/home/alice/.config)\n// Win: Some(C:\\Users\\Alice\\AppData\\Roaming)\n// Mac: Some(/Users/Alice/Library/Application Support)\n\ndirs::executable_dir();\n// Lin: Some(/home/alice/.local/bin)\n// Win: None\n// Mac: None",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "dotenvy",
+    "lang": "rust",
+    "version": "0.15.7",
+    "summary": "A well-maintained fork of the dotenv crate",
+    "docsUrl": "https://docs.rs/dotenvy",
+    "repoUrl": "https://github.com/allan2/dotenvy",
+    "quickstart": "use std::env;\nuse std::error::Error;\n\nfn main() -> Result<(), Box<dyn Error>> {\n    // Load environment variables from .env file.\n    // Fails if .env file not found, not readable or invalid.\n    dotenvy::dotenv()?;\n\n    for (key, value) in env::vars() {\n        println!(\"{key}: {value}\");\n    }\n\n    Ok(())\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "egui",
+    "lang": "rust",
+    "version": "0.35.0",
+    "summary": "An easy-to-use immediate mode GUI that runs on both web and native",
+    "docsUrl": "https://docs.rs/egui",
+    "repoUrl": "https://github.com/emilk/egui",
+    "quickstart": "ui.heading(\"My egui Application\");\nui.horizontal(|ui| {\n    ui.label(\"Your name: \");\n    ui.text_edit_singleline(&mut name);\n});\nui.add(egui::Slider::new(&mut age, 0..=120).text(\"age\"));\nif ui.button(\"Increment\").clicked() {\n    age += 1;\n}\nui.label(format!(\"Hello '{name}', age {age}\"));\nui.image(egui::include_image!(\"ferris.png\"));",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "fancy-regex",
+    "lang": "rust",
+    "version": "0.18.0",
+    "summary": "An implementation of regexes, supporting a relatively rich set of features, including backreferences and look-around. Aims to be compatible with Oniguruma syntax when the relevant flag is set.",
+    "docsUrl": "https://docs.rs/fancy-regex",
+    "repoUrl": "https://github.com/fancy-regex/fancy-regex",
+    "quickstart": "import re\nre.compile('(a|b|ab)*bc').match('ab' * 28 + 'ac')",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "fastrand",
+    "lang": "rust",
+    "version": "2.5.0",
+    "summary": "A simple and fast random number generator",
+    "docsUrl": "https://docs.rs/fastrand",
+    "repoUrl": "https://github.com/smol-rs/fastrand",
+    "quickstart": "if fastrand::bool() {\n    println!(\"heads\");\n} else {\n    println!(\"tails\");\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "figment",
+    "lang": "rust",
+    "version": "0.10.19",
+    "summary": "A configuration library so con-free, it's unreal.",
+    "docsUrl": "https://docs.rs/figment/0.10",
+    "repoUrl": "https://github.com/SergioBenitez/Figment",
+    "quickstart": "use serde::Deserialize;\n\nuse figment::{Figment, providers::{Format, Toml, Json, Env}};\n\n#[derive(Deserialize)]\nstruct Package {\n    name: String,\n    authors: Vec<String>,\n    publish: Option<bool>,\n    // ... and so on ...\n}\n\n#[derive(Deserialize)]\nstruct Config {\n    package: Package,\n    rustc: Option<String>,\n    // ... and so on ...\n}\n\nlet config: Config = Figment::new()\n    .merge(Toml::file(\"Cargo.toml\"))\n    .merge(Env::prefixed(\"CARGO_\"))\n    .merge(Env::raw().only(&[\"RUSTC\", \"RUSTDOC\"]))\n    .join(Json::file(\"Cargo.json\"))\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "flate2",
+    "lang": "rust",
+    "version": "1.1.9",
+    "summary": "DEFLATE compression and decompression exposed as Read/BufRead/Write streams.\nSupports miniz_oxide and multiple zlib implementations. Supports zlib, gzip,\nand raw deflate streams.",
+    "docsUrl": "https://docs.rs/flate2",
+    "repoUrl": "https://github.com/rust-lang/flate2-rs",
+    "quickstart": "use std::io::prelude::*;\nuse flate2::Compression;\nuse flate2::write::ZlibEncoder;\n\nfn main() {\n    let mut e = ZlibEncoder::new(Vec::new(), Compression::default());\n    e.write_all(b\"foo\");\n    e.write_all(b\"bar\");\n    let compressed_bytes = e.finish();\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "flume",
+    "lang": "rust",
+    "version": "0.12.0",
+    "summary": "A blazingly fast multi-producer channel",
+    "docsUrl": "https://docs.rs/flume",
+    "repoUrl": "https://github.com/zesterer/flume",
+    "quickstart": "use std::thread;\n\nfn main() {\n    println!(\"Hello, world!\");\n\n    let (tx, rx) = flume::unbounded();\n\n    thread::spawn(move || {\n        (0..10).for_each(|i| {\n            tx.send(i).unwrap();\n        })\n    });\n\n    let received: u32 = rx.iter().sum();\n\n    assert_eq!((0..10).sum::<u32>(), received);\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "futures",
+    "lang": "rust",
+    "version": "0.3.33",
+    "summary": "An implementation of futures and streams featuring zero allocations,\ncomposability, and iterator-like interfaces.",
+    "docsUrl": "https://docs.rs/futures",
+    "repoUrl": "https://github.com/rust-lang/futures-rs",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "glam",
+    "lang": "rust",
+    "version": "0.33.2",
+    "summary": "A simple and fast 3D math library for games and graphics",
+    "docsUrl": "https://docs.rs/glam",
+    "repoUrl": "https://github.com/bitshifter/glam-rs",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "globset",
+    "lang": "rust",
+    "version": "0.4.19",
+    "summary": "Cross platform single glob and glob set matching. Glob set matching is the\nprocess of matching one or more glob patterns against a single candidate path\nsimultaneously, and returning all of the globs that matched.",
+    "docsUrl": "https://docs.rs/globset",
+    "repoUrl": "https://github.com/BurntSushi/ripgrep/tree/master/crates/globset",
+    "quickstart": "use globset::Glob;\n\nlet glob = Glob::new(\"*.rs\")?.compile_matcher();\n\nassert!(glob.is_match(\"foo.rs\"));\nassert!(glob.is_match(\"foo/bar.rs\"));\nassert!(!glob.is_match(\"Cargo.toml\"));",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "hex",
+    "lang": "rust",
+    "version": "0.4.3",
+    "summary": "Encoding and decoding data into/from hexadecimal representation.",
+    "docsUrl": "https://docs.rs/hex/",
+    "repoUrl": "https://github.com/KokaKiwi/rust-hex",
+    "quickstart": "let hex_string = hex::encode(\"Hello world!\");\n\nprintln!(\"{}\", hex_string); // Prints \"48656c6c6f20776f726c6421\"",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "iced",
+    "lang": "rust",
+    "version": "0.14.0",
+    "summary": "A cross-platform GUI library inspired by Elm",
+    "docsUrl": "https://docs.rs/iced",
+    "repoUrl": "https://github.com/iced-rs/iced",
+    "quickstart": "#[derive(Default)]\nstruct Counter {\n    value: i32,\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ignore",
+    "lang": "rust",
+    "version": "0.4.31",
+    "summary": "A fast library for efficiently matching ignore files such as `.gitignore`\nagainst file paths.",
+    "docsUrl": "https://docs.rs/ignore",
+    "repoUrl": "https://github.com/BurntSushi/ripgrep/tree/master/crates/ignore",
+    "quickstart": "use ignore::Walk;\n\nfor result in Walk::new(\"./\") {\n    // Each item yielded by the iterator is either a directory entry or an\n    // error, so either print the path or the error.\n    match result {\n        Ok(entry) => println!(\"{}\", entry.path().display()),\n        Err(err) => println!(\"ERROR: {}\", err),\n    }\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "indexmap",
+    "lang": "rust",
+    "version": "2.14.0",
+    "summary": "A hash table with consistent order and fast iteration.",
+    "docsUrl": "https://docs.rs/indexmap/",
+    "repoUrl": "https://github.com/indexmap-rs/indexmap",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "indicatif",
+    "lang": "rust",
+    "version": "0.18.6",
+    "summary": "A progress bar and cli reporting library for Rust",
+    "docsUrl": "https://docs.rs/indicatif",
+    "repoUrl": "https://github.com/console-rs/indicatif",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "inquire",
+    "lang": "rust",
+    "version": "0.9.4",
+    "summary": "inquire is a library for building interactive prompts on terminals",
+    "docsUrl": "https://docs.rs/inquire",
+    "repoUrl": "https://github.com/mikaelmello/inquire",
+    "quickstart": "#[derive(Debug, Copy, Clone, Selectable)]\nenum Color {\n    Red,\n    Green,\n    Blue,\n}\n\nfn main() -> InquireResult<()> {\n    let color = Color::select(\"Choose a color:\").prompt()?;\n    Ok(())\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "itertools",
+    "lang": "rust",
+    "version": "0.15.0",
+    "summary": "Extra iterator adaptors, iterator methods, free functions, and macros.",
+    "docsUrl": "https://docs.rs/itertools/",
+    "repoUrl": "https://github.com/rust-itertools/itertools",
+    "quickstart": "use itertools::Itertools;",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "jiff",
+    "lang": "rust",
+    "version": "0.2.35",
+    "summary": "A date-time library that encourages you to jump into the pit of success.\n\nThis library is heavily inspired by the Temporal project.",
+    "docsUrl": "https://docs.rs/jiff",
+    "repoUrl": "https://github.com/BurntSushi/jiff",
+    "quickstart": "use jiff::{Timestamp, ToSpan};\n\nfn main() -> Result<(), jiff::Error> {\n    let time: Timestamp = \"2024-07-11T01:14:00Z\".parse()?;\n    let zoned = time.in_tz(\"America/New_York\")?.checked_add(1.month().hours(2))?;\n    assert_eq!(zoned.to_string(), \"2024-08-10T23:14:00-04:00[America/New_York]\");\n    // Or, if you want an RFC3339 formatted string:\n    assert_eq!(zoned.timestamp().to_string(), \"2024-08-11T03:14:00Z\");\n    Ok(())\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "jsonwebtoken",
+    "lang": "rust",
+    "version": "11.0.0",
+    "summary": "Create and decode JWTs in a strongly typed way.",
+    "docsUrl": "https://docs.rs/jsonwebtoken",
+    "repoUrl": "https://github.com/Keats/jsonwebtoken",
+    "quickstart": "use serde::{Serialize, Deserialize};\nuse jsonwebtoken::{encode, decode, Header, Extras, Algorithm, Validation, EncodingKey, DecodingKey};\n\n/// Our claims struct, it needs to derive `Serialize` and/or `Deserialize`\n#[derive(Debug, Serialize, Deserialize)]\nstruct Claims {\n    sub: String,\n    company: String,\n    exp: usize,\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "macroquad",
+    "lang": "rust",
+    "version": "0.4.15",
+    "summary": "Simple and easy to use graphics library",
+    "docsUrl": "https://docs.rs/macroquad",
+    "repoUrl": "https://github.com/not-fl3/macroquad",
+    "quickstart": "use macroquad::prelude::*;\n\n#[macroquad::main(\"BasicShapes\")]\nasync fn main() {\n    loop {\n        clear_background(RED);\n\n        draw_line(40.0, 40.0, 100.0, 200.0, 15.0, BLUE);\n        draw_rectangle(screen_width() / 2.0 - 60.0, 100.0, 120.0, 60.0, GREEN);\n        draw_circle(screen_width() - 30.0, screen_height() - 30.0, 15.0, YELLOW);\n\n        draw_text(\"IT WORKS!\", 20.0, 20.0, 30.0, DARKGRAY);\n\n        next_frame().await\n    }\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "mongodb",
+    "lang": "rust",
+    "version": "3.8.0",
+    "summary": "The official MongoDB driver for Rust",
+    "docsUrl": "https://docs.rs/mongodb",
+    "repoUrl": "https://github.com/mongodb/mongo-rust-driver",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "nalgebra",
+    "lang": "rust",
+    "version": "0.35.0",
+    "summary": "General-purpose linear algebra library with transformations and statically-sized or dynamically-sized matrices.",
+    "docsUrl": "https://www.nalgebra.rs/docs",
+    "repoUrl": "https://github.com/dimforge/nalgebra",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "native-tls",
+    "lang": "rust",
+    "version": "0.2.18",
+    "summary": "A wrapper over a platform's native TLS implementation",
+    "docsUrl": "https://docs.rs/native-tls",
+    "repoUrl": "https://github.com/rust-native-tls/rust-native-tls",
+    "quickstart": "use native_tls::TlsConnector;\nuse std::io::{Read, Write};\nuse std::net::TcpStream;\n\nfn main() {\n    let connector = TlsConnector::new().unwrap();\n\n    let stream = TcpStream::connect(\"google.com:443\").unwrap();\n    let mut stream = connector.connect(\"google.com\", stream).unwrap();\n\n    stream.write_all(b\"GET / HTTP/1.0\\r\\n\\r\\n\").unwrap();\n    let mut res = vec![];\n    stream.read_to_end(&mut res).unwrap();\n    println!(\"{}\", String::from_utf8_lossy(&res));\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ndarray",
+    "lang": "rust",
+    "version": "0.17.2",
+    "summary": "An n-dimensional array for general elements and for numerics. Lightweight array views and slicing; views support chunking and splitting.",
+    "docsUrl": "https://docs.rs/ndarray/",
+    "repoUrl": "https://github.com/rust-ndarray/ndarray",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "notify",
+    "lang": "rust",
+    "version": "8.2.0",
+    "summary": "Cross-platform filesystem notification library",
+    "docsUrl": "https://docs.rs/notify",
+    "repoUrl": "https://github.com/notify-rs/notify.git",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "num-bigint",
+    "lang": "rust",
+    "version": "0.5.1",
+    "summary": "Big integer implementation for Rust",
+    "docsUrl": "https://docs.rs/num-bigint",
+    "repoUrl": "https://github.com/rust-num/num-bigint",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "owo-colors",
+    "lang": "rust",
+    "version": "4.3.0",
+    "summary": "Zero-allocation terminal colors that'll make people go owo",
+    "docsUrl": "https://docs.rs/owo-colors",
+    "repoUrl": "https://github.com/owo-colors/owo-colors",
+    "quickstart": "use owo_colors::OwoColorize;\n\nfn main() {\n    // Foreground colors\n    println!(\"My number is {:#x}!\", 10.green());\n    // Background colors\n    println!(\"My number is not {}!\", 4.on_red());\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "parking_lot",
+    "lang": "rust",
+    "version": "0.12.5",
+    "summary": "More compact and efficient implementations of the standard synchronization primitives.",
+    "docsUrl": "https://docs.rs/parking_lot",
+    "repoUrl": "https://github.com/Amanieu/parking_lot",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "polars",
+    "lang": "rust",
+    "version": "0.54.4",
+    "summary": "DataFrame library based on Apache Arrow",
+    "docsUrl": "https://docs.rs/polars",
+    "repoUrl": "https://github.com/pola-rs/polars",
+    "quickstart": "pl.show_versions()",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "prost",
+    "lang": "rust",
+    "version": "0.14.4",
+    "summary": "A Protocol Buffers implementation for the Rust Language.",
+    "docsUrl": "https://docs.rs/prost",
+    "repoUrl": "https://github.com/tokio-rs/prost",
+    "quickstart": "#[derive(Clone, PartialEq, ::prost::Message)]\npub struct Person {\n    #[prost(string, tag=\"1\")]\n    pub name: ::prost::alloc::string::String,\n    /// Unique ID number for this person.\n    #[prost(int32, tag=\"2\")]\n    pub id: i32,\n    #[prost(string, tag=\"3\")]\n    pub email: ::prost::alloc::string::String,\n    #[prost(message, repeated, tag=\"4\")]\n    pub phones: ::prost::alloc::vec::Vec<person::PhoneNumber>,\n}\n/// Nested message and enum types in `Person`.\npub mod person {\n    #[derive(Clone, PartialEq, ::prost::Message)]\n    pub struct PhoneNumber {\n        #[prost(string, tag=\"1\")]\n        pub number: ::prost::alloc::string::String,\n        #[prost(enumeration=\"PhoneType\", tag=\"2\")]\n        pub r#type: i32,\n    }\n    #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]\n    #[repr(i32)]\n    pub enum PhoneType {\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "pyo3",
+    "lang": "rust",
+    "version": "0.29.0",
+    "summary": "Bindings to Python interpreter",
+    "docsUrl": "https://docs.rs/crate/pyo3/",
+    "repoUrl": "https://github.com/pyo3/pyo3",
+    "quickstart": "/// A Python module implemented in Rust. The name of this module must match\n/// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to\n/// import the module.\n#[pyo3::pymodule]\nmod string_sum {\n  use pyo3::prelude::*;\n\n  /// Formats the sum of two numbers as string.\n  #[pyfunction]\n  fn sum_as_string(a: usize, b: usize) -> PyResult<String> {\n    Ok((a + b).to_string())\n  }\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "rand",
+    "lang": "rust",
+    "version": "0.10.2",
+    "summary": "Random number generators and other randomness functionality.",
+    "docsUrl": "https://docs.rs/rand",
+    "repoUrl": "https://github.com/rust-random/rand",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ratatui",
+    "lang": "rust",
+    "version": "0.30.2",
+    "summary": "A library that's all about cooking up terminal user interfaces",
+    "docsUrl": "https://docs.rs/ratatui/latest/ratatui/",
+    "repoUrl": "https://github.com/ratatui/ratatui",
+    "quickstart": "use color_eyre::Result;\nuse crossterm::event::{self, Event};\nuse ratatui::{DefaultTerminal, Frame};\n\nfn main() -> Result<()> {\n    color_eyre::install()?;\n    let terminal = ratatui::init();\n    let result = run(terminal);\n    ratatui::restore();\n    result\n}\n\nfn run(mut terminal: DefaultTerminal) -> Result<()> {\n    loop {\n        terminal.draw(render)?;\n        if matches!(event::read()?, Event::Key(_)) {\n            break Ok(());\n        }\n    }\n}\n\nfn render(frame: &mut Frame) {\n    frame.render_widget(\"hello world\", frame.area());\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "rayon",
+    "lang": "rust",
+    "version": "1.12.0",
+    "summary": "Simple work-stealing parallelism for Rust",
+    "docsUrl": "https://docs.rs/rayon/",
+    "repoUrl": "https://github.com/rayon-rs/rayon",
+    "quickstart": "use rayon::prelude::*;\nfn sum_of_squares(input: &[i32]) -> i32 {\n    input.par_iter() // <-- just change that!\n         .map(|&i| i * i)\n         .sum()\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "redis",
+    "lang": "rust",
+    "version": "1.4.1",
+    "summary": "Redis driver for Rust.",
+    "docsUrl": "https://docs.rs/redis",
+    "repoUrl": "https://github.com/redis-rs/redis-rs",
+    "quickstart": "use redis::TypedCommands;\n\nfn fetch_an_integer() -> Option<isize> {\n    // connect to redis\n    let client = redis::Client::open(\"redis://127.0.0.1/\")?;\n    let mut con = client.get_connection()?;\n    // `set` returns a `()`, so we don't need to specify the return type manually unlike in the previous example.\n    con.set(\"my_key\", 42)?;\n    // `get_int` returns Option<isize>, as the key may not be found.\n    con.get_int(\"my_key\").unwrap()\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "regex",
+    "lang": "rust",
+    "version": "1.13.1",
+    "summary": "An implementation of regular expressions for Rust. This implementation uses\nfinite automata and guarantees linear time matching on all inputs.",
+    "docsUrl": "https://docs.rs/regex",
+    "repoUrl": "https://github.com/rust-lang/regex",
+    "quickstart": "use regex::Regex;\n\nfn main() {\n    let re = Regex::new(r\"(?x)\n(?P<year>\\d{4})  # the year\n-\n(?P<month>\\d{2}) # the month\n-\n(?P<day>\\d{2})   # the day\n\").unwrap();\n\n    let caps = re.captures(\"2010-03-14\").unwrap();\n    assert_eq!(\"2010\", &caps[\"year\"]);\n    assert_eq!(\"03\", &caps[\"month\"]);\n    assert_eq!(\"14\", &caps[\"day\"]);\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "reqwest",
+    "lang": "rust",
+    "version": "0.13.4",
+    "summary": "higher level HTTP client library",
+    "docsUrl": "https://docs.rs/reqwest",
+    "repoUrl": "https://github.com/seanmonstar/reqwest",
+    "quickstart": "use std::collections::HashMap;\n\n#[tokio::main]\nasync fn main() -> Result<(), Box<dyn std::error::Error>> {\n    let resp = reqwest::get(\"https://httpbin.org/ip\")\n        .await?\n        .json::<HashMap<String, String>>()\n        .await?;\n    println!(\"{resp:#?}\");\n    Ok(())\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "rfd",
+    "lang": "rust",
+    "version": "0.17.2",
+    "summary": "Rusty File Dialog",
+    "docsUrl": "https://docs.rs/rfd",
+    "repoUrl": "https://github.com/PolyMeilex/rfd",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ring",
+    "lang": "rust",
+    "version": "0.17.14",
+    "summary": "An experiment.",
+    "docsUrl": "https://docs.rs/ring",
+    "repoUrl": "https://github.com/briansmith/ring",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "rusqlite",
+    "lang": "rust",
+    "version": "0.40.1",
+    "summary": "Ergonomic wrapper for SQLite",
+    "docsUrl": "https://docs.rs/rusqlite/",
+    "repoUrl": "https://github.com/rusqlite/rusqlite",
+    "quickstart": "use rusqlite::{Connection, Result};\n\n#[derive(Debug)]\nstruct Person {\n    id: i32,\n    name: String,\n    data: Option<Vec<u8>>,\n}\n\nfn main() -> Result<()> {\n    let conn = Connection::open_in_memory()?;\n\n    conn.execute(\n        \"CREATE TABLE person (\n            id    INTEGER PRIMARY KEY,\n            name  TEXT NOT NULL,\n            data  BLOB\n        )\",\n        (), // empty list of parameters.\n    )?;\n    let me = Person {\n        id: 0,\n        name: \"Steven\".to_string(),\n        data: None,\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "rust_decimal",
+    "lang": "rust",
+    "version": "1.42.1",
+    "summary": "Decimal number implementation written in pure Rust suitable for financial and fixed-precision calculations.",
+    "docsUrl": "https://docs.rs/rust_decimal/",
+    "repoUrl": "https://github.com/paupino/rust-decimal",
+    "quickstart": "// Import via use rust_decimal_macros or use the `macros` feature to import at the crate level\n// `use rust_decimal_macros::dec;`\n// or\n// `use rust_decimal::dec;`\n\nlet number = dec!(-1.23) + dec!(3.45);\nassert_eq!(number, dec!(2.22));\nassert_eq!(number.to_string(), \"2.22\");",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "rustls",
+    "lang": "rust",
+    "version": "0.23.42",
+    "summary": "Rustls is a modern TLS library written in Rust.",
+    "docsUrl": "https://docs.rs/rustls",
+    "repoUrl": "https://github.com/rustls/rustls",
+    "quickstart": "$ cargo run --bin tlsclient-mio -- --http mozilla-modern.badssl.com\nHTTP/1.1 200 OK\nServer: nginx/1.6.2 (Ubuntu)\nDate: Wed, 01 Jun 2016 18:44:00 GMT\nContent-Type: text/html\nContent-Length: 644\n(...)",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "sea-orm",
+    "lang": "rust",
+    "version": "2.0.0",
+    "summary": "🐚 An async & dynamic ORM for Rust",
+    "docsUrl": "https://docs.rs/sea-orm",
+    "repoUrl": "https://github.com/SeaQL/sea-orm",
+    "quickstart": "mod user {\n    use sea_orm::entity::prelude::*;\n\n    #[sea_orm::model]\n    #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]\n    #[sea_orm(table_name = \"user\")]\n    pub struct Model {\n        #[sea_orm(primary_key)]\n        pub id: i32,\n        pub name: String,\n        #[sea_orm(unique)]\n        pub email: String,\n        #[sea_orm(has_one)]\n        pub profile: HasOne<super::profile::Entity>,\n        #[sea_orm(has_many)]\n        pub posts: HasMany<super::post::Entity>,\n    }\n}\nmod post {\n    use sea_orm::entity::prelude::*;\n\n    #[sea_orm::model]\n    #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]\n    #[sea_orm(table_name = \"post\")]\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "serde",
+    "lang": "rust",
+    "version": "1.0.229",
+    "summary": "A generic serialization/deserialization framework",
+    "docsUrl": "https://docs.rs/serde",
+    "repoUrl": "https://github.com/serde-rs/serde",
+    "quickstart": "use serde::{Deserialize, Serialize};\n\n#[derive(Serialize, Deserialize, Debug)]\nstruct Point {\n    x: i32,\n    y: i32,\n}\n\nfn main() {\n    let point = Point { x: 1, y: 2 };\n\n    // Convert the Point to a JSON string.\n    let serialized = serde_json::to_string(&point).unwrap();\n\n    // Prints serialized = {\"x\":1,\"y\":2}\n    println!(\"serialized = {}\", serialized);\n\n    // Convert the JSON string back to a Point.\n    let deserialized: Point = serde_json::from_str(&serialized).unwrap();\n\n    // Prints deserialized = Point { x: 1, y: 2 }\n    println!(\"deserialized = {:?}\", deserialized);\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "serde_json",
+    "lang": "rust",
+    "version": "1.0.151",
+    "summary": "A JSON serialization file format",
+    "docsUrl": "https://docs.rs/serde_json",
+    "repoUrl": "https://github.com/serde-rs/json",
+    "quickstart": "enum Value {\n    Null,\n    Bool(bool),\n    Number(Number),\n    String(String),\n    Array(Vec<Value>),\n    Object(Map<String, Value>),\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "sha2",
+    "lang": "rust",
+    "version": "0.11.0",
+    "summary": "Pure Rust implementation of the SHA-2 hash function family\nincluding SHA-224, SHA-256, SHA-384, and SHA-512.",
+    "docsUrl": "https://docs.rs/sha2",
+    "repoUrl": "https://github.com/RustCrypto/hashes",
+    "quickstart": "use sha2::{Sha256, Digest};\nuse hex_literal::hex;\n\nlet hash = Sha256::digest(b\"hello world\");\nassert_eq!(hash, hex!(\"b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9\"));",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "slint",
+    "lang": "rust",
+    "version": "1.17.1",
+    "summary": "GUI toolkit to efficiently develop fluid graphical user interfaces for embedded devices and desktop applications",
+    "docsUrl": "https://slint.dev/docs",
+    "repoUrl": "https://github.com/slint-ui/slint",
+    "quickstart": "slint::slint!{\n    export component HelloWorld {\n        Text {\n            text: \"hello world\";\n            color: green;\n        }\n    }\n}\nfn main() {\n    HelloWorld::new().unwrap().run().unwrap();\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "smallvec",
+    "lang": "rust",
+    "version": "1.15.2",
+    "summary": "'Small vector' optimization: store up to a small number of items on the stack",
+    "docsUrl": "https://docs.rs/smallvec/",
+    "repoUrl": "https://github.com/servo/rust-smallvec",
+    "quickstart": "use smallvec::{SmallVec, smallvec};\n    \n// This SmallVec can hold up to 4 items on the stack:\nlet mut v: SmallVec<[i32; 4]> = smallvec![1, 2, 3, 4];\n\n// It will automatically move its contents to the heap if\n// contains more than four items:\nv.push(5);\n\n// SmallVec points to a slice, so you can use normal slice\n// indexing and other methods to access its contents:\nv[0] = v[1] + v[2];\nv.sort();",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "sqlx",
+    "lang": "rust",
+    "version": "0.9.0",
+    "summary": "🧰 The Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports PostgreSQL, MySQL, and SQLite.",
+    "docsUrl": "https://docs.rs/sqlx",
+    "repoUrl": "https://github.com/launchbadge/sqlx",
+    "quickstart": "use sqlx::postgres::PgPoolOptions;\n// use sqlx::mysql::MySqlPoolOptions;\n// etc.\n\n#[async_std::main] // Requires the `attributes` feature of `async-std`\n// or #[tokio::main]\n// or #[actix_web::main]\nasync fn main() -> Result<(), sqlx::Error> {\n    // Create a connection pool\n    //  for MySQL/MariaDB, use MySqlPoolOptions::new()\n    //  for SQLite, use SqlitePoolOptions::new()\n    //  etc.\n    let pool = PgPoolOptions::new()\n        .max_connections(5)\n        .connect(\"postgres://postgres:password@localhost/test\").await?;\n\n    // Make a simple query to return the given parameter (use a question mark `?` instead of `$1` for MySQL/MariaDB)\n    let row: (i64,) = sqlx::query_as(\"SELECT $1\")\n        .bind(150_i64)\n        .fetch_one(&pool).await?;\n\n    assert_eq!(row.0, 150);\n\n    Ok(())\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tauri",
+    "lang": "rust",
+    "version": "2.11.5",
+    "summary": "Make tiny, secure apps for all desktop platforms with Tauri",
+    "docsUrl": "https://docs.rs/tauri",
+    "repoUrl": "https://github.com/tauri-apps/tauri",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tempfile",
+    "lang": "rust",
+    "version": "3.27.0",
+    "summary": "A library for managing temporary files and directories.",
+    "docsUrl": "https://docs.rs/tempfile",
+    "repoUrl": "https://github.com/Stebalien/tempfile",
+    "quickstart": "use std::fs::File;\nuse std::io::{Write, Read, Seek, SeekFrom};\n\nfn main() {\n    // Write\n    let mut tmpfile: File = tempfile::tempfile().unwrap();\n    write!(tmpfile, \"Hello World!\").unwrap();\n\n    // Seek to start\n    tmpfile.seek(SeekFrom::Start(0)).unwrap();\n\n    // Read\n    let mut buf = String::new();\n    tmpfile.read_to_string(&mut buf).unwrap();\n    assert_eq!(\"Hello World!\", buf);\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "thiserror",
+    "lang": "rust",
+    "version": "2.0.19",
+    "summary": "derive(Error)",
+    "docsUrl": "https://docs.rs/thiserror",
+    "repoUrl": "https://github.com/dtolnay/thiserror",
+    "quickstart": "use thiserror::Error;\n\n#[derive(Error, Debug)]\npub enum DataStoreError {\n    #[error(\"data store disconnected\")]\n    Disconnect(#[from] io::Error),\n    #[error(\"the data for key `{0}` is not available\")]\n    Redaction(String),\n    #[error(\"invalid header (expected {expected:?}, found {found:?})\")]\n    InvalidHeader {\n        expected: String,\n        found: String,\n    },\n    #[error(\"unknown data store error\")]\n    Unknown,\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "time",
+    "lang": "rust",
+    "version": "0.3.54",
+    "summary": "Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].",
+    "docsUrl": "https://docs.rs/time",
+    "repoUrl": "https://github.com/time-rs/time",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tokio",
+    "lang": "rust",
+    "version": "1.53.1",
+    "summary": "An event-driven, non-blocking I/O platform for writing asynchronous I/O\nbacked applications.",
+    "docsUrl": "https://docs.rs/tokio",
+    "repoUrl": "https://github.com/tokio-rs/tokio",
+    "quickstart": "use tokio::net::TcpListener;\nuse tokio::io::{AsyncReadExt, AsyncWriteExt};\n\n#[tokio::main]\nasync fn main() -> Result<(), Box<dyn std::error::Error>> {\n    let listener = TcpListener::bind(\"127.0.0.1:8080\").await?;\n\n    loop {\n        let (mut socket, _) = listener.accept().await?;\n\n        tokio::spawn(async move {\n            let mut buf = [0; 1024];\n\n            // In a loop, read data from the socket and write the data back.\n            loop {\n                let n = match socket.read(&mut buf).await {\n                    // socket closed\n                    Ok(0) => return,\n                    Ok(n) => n,\n                    Err(e) => {\n                        eprintln!(\"failed to read from socket; err = {:?}\", e);\n                        return;\n                    }\n                };\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tokio-tungstenite",
+    "lang": "rust",
+    "version": "0.30.0",
+    "summary": "Tokio binding for Tungstenite, the Lightweight stream-based WebSocket implementation",
+    "docsUrl": "https://docs.rs/tokio-tungstenite/0.30.0",
+    "repoUrl": "https://github.com/snapview/tokio-tungstenite",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tokio-util",
+    "lang": "rust",
+    "version": "0.7.19",
+    "summary": "Additional utilities for working with Tokio.",
+    "docsUrl": "https://docs.rs/tokio-util",
+    "repoUrl": "https://github.com/tokio-rs/tokio",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tonic",
+    "lang": "rust",
+    "version": "0.14.6",
+    "summary": "A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility.",
+    "docsUrl": "https://docs.rs/tonic",
+    "repoUrl": "https://github.com/hyperium/tonic",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tower-http",
+    "lang": "rust",
+    "version": "0.7.0",
+    "summary": "Tower middleware and utilities for HTTP clients and servers",
+    "docsUrl": "https://docs.rs/tower-http",
+    "repoUrl": "https://github.com/tower-rs/tower-http",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tracing",
+    "lang": "rust",
+    "version": "0.1.44",
+    "summary": "Application-level tracing for Rust.",
+    "docsUrl": "https://docs.rs/tracing",
+    "repoUrl": "https://github.com/tokio-rs/tracing",
+    "quickstart": "use tracing::{info, Level};\nuse tracing_subscriber::FmtSubscriber;\n\nfn main() {\n    // a builder for `FmtSubscriber`.\n    let subscriber = FmtSubscriber::builder()\n        // all spans/events with a level higher than TRACE (e.g, debug, info, warn, etc.)\n        // will be written to stdout.\n        .with_max_level(Level::TRACE)\n        // completes the builder.\n        .finish();\n\n    tracing::subscriber::set_global_default(subscriber)\n        .expect(\"setting default subscriber failed\");\n\n    let number_of_yaks = 3;\n    // this creates a new event, outside of any spans.\n    info!(number_of_yaks, \"preparing to shave yaks\");\n\n    let number_shaved = yak_shave::shave_all(number_of_yaks);\n    info!(\n        all_yaks_shaved = number_shaved == number_of_yaks,\n        \"yak shaving completed.\"\n    );\n…",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "tracing-subscriber",
+    "lang": "rust",
+    "version": "0.3.23",
+    "summary": "Utilities for implementing and composing `tracing` subscribers.",
+    "docsUrl": "https://docs.rs/tracing-subscriber",
+    "repoUrl": "https://github.com/tokio-rs/tracing",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "ureq",
+    "lang": "rust",
+    "version": "3.3.0",
+    "summary": "Simple, safe HTTP client",
+    "docsUrl": "https://docs.rs/ureq",
+    "repoUrl": "https://github.com/algesten/ureq",
+    "quickstart": "let body: String = ureq::get(\"http://example.com\")\n    .header(\"Example-Header\", \"header value\")\n    .call()?\n    .body_mut()\n    .read_to_string()?;",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "uuid",
+    "lang": "rust",
+    "version": "1.24.0",
+    "summary": "A library to generate and parse UUIDs.",
+    "docsUrl": "https://docs.rs/uuid",
+    "repoUrl": "https://github.com/uuid-rs/uuid",
+    "quickstart": "use uuid::Uuid;\n\nlet id = Uuid::new_v4();",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "walkdir",
+    "lang": "rust",
+    "version": "2.5.0",
+    "summary": "Recursively walk a directory.",
+    "docsUrl": "https://docs.rs/walkdir/",
+    "repoUrl": "https://github.com/BurntSushi/walkdir",
+    "quickstart": "use walkdir::WalkDir;\n\nfor entry in WalkDir::new(\"foo\") {\n    let entry = entry.unwrap();\n    println!(\"{}\", entry.path().display());\n}",
+    "fetchedAt": "2026-07-27"
+  },
+  {
+    "name": "zstd",
+    "lang": "rust",
+    "version": "0.13.3",
+    "summary": "Binding for the zstd compression library.",
+    "docsUrl": "https://docs.rs/zstd",
+    "repoUrl": "https://github.com/gyscos/zstd-rs",
+    "quickstart": "use std::io;\n\n// This function use the convenient `copy_encode` method\nfn compress(level: i32) {\n    zstd::stream::copy_encode(io::stdin(), io::stdout(), level).unwrap();\n}\n\n// This function does the same thing, directly using an `Encoder`:\nfn compress_manually(level: i32) {\n    let mut encoder = zstd::stream::Encoder::new(io::stdout(), level).unwrap();\n    io::copy(&mut io::stdin(), &mut encoder).unwrap();\n    encoder.finish().unwrap();\n}\n\nfn decompress() {\n    zstd::stream::copy_decode(io::stdin(), io::stdout()).unwrap();\n}",
+    "fetchedAt": "2026-07-27"
+  }
+]
