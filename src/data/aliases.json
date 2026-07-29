@@ -183,6 +183,78 @@
   { "keywords": ["位标志", "bitflags", "flags"], "lang": "rust", "packages": [
     { "name": "bitflags", "note": "强类型位标志" }
   ]},
+  { "keywords": ["解析器", "parser", "语法", "自定义格式", "dsl"], "lang": "rust", "packages": [
+    { "name": "nom", "note": "解析器组合子事实标准" },
+    { "name": "winnow", "note": "nom 改良版，API 更直观" },
+    { "name": "pest", "note": "写 PEG 语法文件生成解析器" }
+  ]},
+  { "keywords": ["测试", "test", "快照", "snapshot", "mock", "参数化"], "lang": "rust", "packages": [
+    { "name": "insta", "note": "快照测试，cargo insta review 交互式审阅", "dev": true },
+    { "name": "rstest", "note": "fixture / 参数化测试", "dev": true },
+    { "name": "proptest", "note": "属性测试，自动缩小反例", "dev": true },
+    { "name": "mockall", "note": "trait 自动生成 mock", "dev": true }
+  ]},
+  { "keywords": ["基准", "benchmark", "性能测试", "bench"], "lang": "rust", "packages": [
+    { "name": "criterion", "note": "统计学基准测试，生成图表报告", "dev": true },
+    { "name": "divan", "note": "更简单的基准测试，属性宏风格", "dev": true }
+  ]},
+  { "keywords": ["模板", "template", "模板引擎", "jinja", "html渲染"], "lang": "rust", "packages": [
+    { "name": "askama", "note": "编译期模板，类型安全（Jinja 风格）" },
+    { "name": "minijinja", "note": "运行时 Jinja2，依赖极少" },
+    { "name": "tera", "note": "运行时模板，Django/Jinja2 风格" }
+  ]},
+  { "keywords": ["内存缓存", "cache", "lru", "ttl"], "lang": "rust", "packages": [
+    { "name": "moka", "note": "并发缓存，支持 TTL/容量淘汰（类 Caffeine）" },
+    { "name": "lru", "note": "极简 LRU，单线程够用就选它" }
+  ]},
+  { "keywords": ["全文搜索", "搜索引擎", "search", "倒排索引"], "lang": "rust", "packages": [
+    { "name": "tantivy", "note": "嵌入式全文搜索引擎（类 Lucene）" }
+  ]},
+  { "keywords": ["csv", "表格文件", "excel"], "lang": "rust", "packages": [
+    { "name": "csv", "note": "高性能 CSV 读写，配 serde" },
+    { "name": "calamine", "note": "读 Excel（xls/xlsx/ods）" }
+  ]},
+  { "keywords": ["toml", "yaml", "xml", "配置文件解析"], "lang": "rust", "packages": [
+    { "name": "toml", "note": "TOML 解析，配 serde" },
+    { "name": "serde_yaml", "note": "YAML 解析（已封存但仍主流）" },
+    { "name": "quick-xml", "note": "高性能 XML 拉取式读写" }
+  ]},
+  { "keywords": ["markdown", "md解析", "commonmark"], "lang": "rust", "packages": [
+    { "name": "pulldown-cmark", "note": "CommonMark 解析，拉取式零拷贝" },
+    { "name": "comrak", "note": "GitHub 风格 Markdown（GFM）全支持" }
+  ]},
+  { "keywords": ["邮件", "email", "smtp", "发邮件"], "lang": "rust", "packages": [
+    { "name": "lettre", "note": "SMTP 发信库" }
+  ]},
+  { "keywords": ["图结构", "graph", "拓扑排序", "最短路"], "lang": "rust", "packages": [
+    { "name": "petgraph", "note": "图数据结构 + 常用图算法" }
+  ]},
+  { "keywords": ["图像", "image", "图片处理", "缩略图"], "lang": "rust", "packages": [
+    { "name": "image", "note": "主流格式编解码 + 基础处理" },
+    { "name": "resvg", "note": "SVG 渲染" }
+  ]},
+  { "keywords": ["音频", "audio", "播放", "解码"], "lang": "rust", "packages": [
+    { "name": "rodio", "note": "音频播放" },
+    { "name": "symphonia", "note": "纯 Rust 音频解码（MP3/FLAC/AAC…）" }
+  ]},
+  { "keywords": ["嵌入脚本", "脚本引擎", "lua", "插件系统"], "lang": "rust", "packages": [
+    { "name": "rhai", "note": "纯 Rust 嵌入式脚本语言" },
+    { "name": "mlua", "note": "Lua/LuaJIT 绑定，支持 async" }
+  ]},
+  { "keywords": ["系统信息", "cpu", "内存占用", "进程列表"], "lang": "rust", "packages": [
+    { "name": "sysinfo", "note": "跨平台 CPU/内存/磁盘/进程信息" }
+  ]},
+  { "keywords": ["机器学习", "ml", "推理", "llm", "神经网络"], "lang": "rust", "packages": [
+    { "name": "candle-core", "note": "HuggingFace 出品的极简 ML 框架" },
+    { "name": "ort", "note": "ONNX Runtime 绑定，跑现成模型推理" }
+  ]},
+  { "keywords": ["绘图", "plot", "图表", "可视化"], "lang": "rust", "packages": [
+    { "name": "plotters", "note": "绘制图表到 PNG/SVG/网页" }
+  ]},
+  { "keywords": ["wasm", "webassembly", "浏览器运行"], "lang": "rust", "packages": [
+    { "name": "wasm-bindgen", "note": "Rust↔JS 互操，编译到浏览器" },
+    { "name": "wasmtime", "note": "在 Rust 里嵌入运行 WASM" }
+  ]},
 
   { "keywords": ["进度条", "progress", "tqdm", "循环进度"], "lang": "python", "packages": [
     { "name": "tqdm", "note": "包一层迭代器就有进度条" },

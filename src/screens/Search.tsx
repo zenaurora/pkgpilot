@@ -59,8 +59,8 @@ export function SearchScreen({ active }: Props) {
     setAliasRows(
       matches.flatMap((m) =>
         m.entry.packages.map((p) => ({
-          pkg: { name: p.name, lang, features: p.features, note: p.note },
-          label: p.name,
+          pkg: { name: p.name, lang, features: p.features, dev: p.dev, note: p.note },
+          label: p.name + (p.dev ? ' (dev)' : ''),
           hint: `${p.note ?? ''}  [${m.entry.keywords[0]}]`,
         })),
       ),

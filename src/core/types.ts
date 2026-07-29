@@ -65,7 +65,7 @@ export interface Bundle {
 export interface AliasEntry {
   keywords: string[]
   lang: Lang
-  packages: { name: string; note?: string; features?: string[] }[]
+  packages: { name: string; note?: string; features?: string[]; dev?: boolean }[]
 }
 
 export interface ScanRule {
